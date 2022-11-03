@@ -7,7 +7,7 @@ Aiheena tehdä algoritmi minimaxilla joka luo AI-vastustajan pelissä "Connect F
 Ohjelmointikieli tulee olemaan Python
 
 ## Linkit dokumentointiin
-- [Määrittelydokumentti]
+### [Määrittelydokumentti](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/M%C3%A4%C3%A4rittelydokumentti.md)
 
-## [Viikkoraportit](https://github.com/BananaMayo/Connect4/tree/main/Dokumentaatio/Viikkoraportit)
+### [Viikkoraportit](https://github.com/BananaMayo/Connect4/tree/main/Dokumentaatio/Viikkoraportit)
 - [Viikko1](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Viikkoraportit/viikko1.md)
