@@ -1,6 +1,6 @@
 # Connect4
 
-Kurssi: TKT20010 Tiralabra syksy 2022, Helsingin Yliopsito
+Kurssi: TKT20010 Tiralabra syksy 2022, Helsingin Yliopisto
 
 Aiheena tehdä algoritmi minimaxilla joka luo AI-vastustajan pelissä "Connect Four"
 
