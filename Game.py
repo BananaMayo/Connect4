@@ -4,6 +4,7 @@ import sys
 import math
 import random
 import numpy as np
+###
 
 ### Globaalit ###
 
@@ -29,7 +30,7 @@ PELAAJAN_KIEKKO = 1
 AI_KIEKKO = 2
 TYHJA = 0
 
-##PYGAME
+##PYGAME alustukset
 pygame.init()
 leveys = SARAKKEET * NELION_KOKO
 korkeus = (RIVIT+1) * NELION_KOKO
@@ -63,9 +64,23 @@ def pelilaudan_tulostus(pelilauta):
 
 
 def pelilauta(pelilauta):
+    """Pelilaudan ulkonäkö; laudan värit sekä ympyrät
+    luodaan tällä funktiolla
+
+    Args:
+        pelilauta (_type_): _description_
+    """
     for sarake in range(SARAKKEET):
         for rivi in range(RIVIT):
             pygame.draw.rect(naytto, SININEN, (sarake*NELION_KOKO, rivi*NELION_KOKO+NELION_KOKO, NELION_KOKO, NELION_KOKO))
             pygame.draw.circle(naytto, MUSTA, (int(sarake*NELION_KOKO+NELION_KOKO/2), int(rivi*NELION_KOKO+NELION_KOKO+NELION_KOKO/2)), SADE)
     
-    
+    """Luodaan pelaajan kiekko sekä AI-vastustajan kiekko
+    """
+    for sarake in range(SARAKKEET):
+        for rivi in range(RIVIT):
+            if pelilauta[rivi][sarake] == PELAAJAN_KIEKKO:
+                pygame.draw.circle(naytto, KELTAINEN, (int(sarake*NELION_KOKO+NELION_KOKO/2), korkeus-int(rivi*NELION_KOKO+NELION_KOKO/2)), SADE)
+            elif pelilauta[rivi][sarake] == AI_KIEKKO:
+                pygame.draw.circle(naytto, PUNAINEN, (int(sarake*NELION_KOKO+NELION_KOKO/2), korkeus-int(rivi*NELION_KOKO+NELION_KOKO/2)), SADE)
+    pygame.display.update()
