@@ -1,4 +1,5 @@
 # Connect4
+![CI](https://github.com/BananaMayo/Connect4/workflows/CI/badge.svg)
 
 Kurssi: TKT20010 Tiralabra syksy 2022, Helsingin Yliopisto
 
