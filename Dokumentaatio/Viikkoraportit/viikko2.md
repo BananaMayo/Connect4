@@ -1,3 +1,5 @@
+Toisen viikon tunnit: [Tehdyt tunnit](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Ty%C3%B6tunnit.md#viikko2)
+
 ### Mitä olen tehnyt tällä viikolla?
 * Tällä viikolla olen aloittanu koodin laatimisen. 
 * Pelille on luotu alustava koodipohja johon olen jo saanut peliä varten tiettyjä
@@ -11,10 +13,11 @@ codecovin avulla.
 ovat vielä keskeneräisiä. Aloitan todennäköisesti AI-algoritmilla vasta ensiviikon puolella mikäli en ehdi tällä viikolla.
 
 ### Mitä opin tällä viikolla / tänään?
-* opin muun muassa miten tätä peliä varten etsitään vaaka-, pysty sekä diagonaalisessa ssuunnassa neljän suoraa
+* opin muun muassa miten tätä peliä varten voidaan esittäää ratkaisu sille kun etsitään vaaka-, pysty sekä diagonaalisessa suunnassa neljän suoraa
 
 ### Mikä jäi epäselväksi tai tuottanut vaikeuksia?
-*    
+* testikattavuus on minulle heikkous kun teen peliä, on vaikea keksiä mitä testaisi ja millä tavalla. Teen kuitenkin parhaani
+jotta kattavuusprosentti olisi kiitettävä.
 
 ### Mitä teen seuraavaksi?
-voidaan esittäää ratkaisu sille 
+* Ensi viikolla aloitan AI-algoritmin laatimisen, mikäli en sitä kerkeä tehdä jo tällä viikolla.
