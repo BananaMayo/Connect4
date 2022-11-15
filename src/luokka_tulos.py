@@ -1,4 +1,4 @@
-import luokka_nakyma as ln
+from luokka_nakyma import Nakyma
 
 RIVIT = 6
 SARAKKEET = 7
@@ -25,7 +25,7 @@ class Tulos:
             rivi_alue = [int(i) for i in list(pelilauta[rivi,:])]
             for sarake in range(SARAKKEET-3):
                 näkymä_ = rivi_alue[sarake:sarake+IKKUNA]
-                self.tulos += ln._näkymä(näkymä_, kiekko)
+                self.tulos += Nakyma._näkymä(näkymä_, kiekko)
 
         """Tässä tarkistetaan pystysuunnassa onnistunut sijoitus
         """
@@ -33,7 +33,7 @@ class Tulos:
             sarake_alue = [int(i) for i in list(pelilauta[:,sarake])]
             for rivi in range(RIVIT-3):
                 näkymä_ = sarake_alue[rivi:rivi+IKKUNA]
-                self.tulos += ln._näkymä(näkymä_, kiekko)
+                self.tulos += Nakyma._näkymä(näkymä_, kiekko)
 
         """ Tässä tarkistetaan diagonaalisessa suunnassa onnistunut
         sijoitus
@@ -41,9 +41,9 @@ class Tulos:
         for rivi in range(RIVIT-3):
             for sarake in range(SARAKKEET-3):
                 näkymä_ = [pelilauta[rivi+i][sarake+i] for i in range(IKKUNA)]
-                self.tulos += ln._näkymä(näkymä_, kiekko)
+                self.tulos += Nakyma._näkymä(näkymä_, kiekko)
 
         for rivi in range(RIVIT-3):
             for sarake in range(SARAKKEET-3):
                 näkymä_ = [pelilauta[rivi+3-i][sarake+i] for i in range(IKKUNA)]
-                self.tulos += ln._näkymä(näkymä_, kiekko)
+                self.tulos += Nakyma._näkymä(näkymä_, kiekko)
