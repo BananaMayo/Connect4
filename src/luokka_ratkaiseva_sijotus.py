@@ -5,7 +5,7 @@ SADE = int(NELION_KOKO/2 - 5)
 IKKUNA = 4
 
 class Ratkaiseva_sijotus:
-    def ratkaiseva_sijotus(self, pelilauta, kiekko):
+    def ratkaiseva_sijotus(pelilauta, kiekko):
 
         """Vaakasuorassa saatu neljän suoran tarkistus:
         """
@@ -19,7 +19,7 @@ class Ratkaiseva_sijotus:
             for rivi in range(RIVIT-3):
                 if pelilauta[rivi][sarake] == kiekko and pelilauta[rivi+1][sarake] == kiekko and pelilauta[rivi+2][sarake] == kiekko and pelilauta[rivi+3][sarake]==kiekko:
                     return True
-        """Diagonaalisessa suunnassa saatu neljän suora, POS(+):
+        """Diagonaalisessa suunnassa saatu neljän suora:
         """
         for sarake in range(SARAKKEET-3):
             for rivi in range(RIVIT-3):
