@@ -1,6 +1,7 @@
+import numpy as np
 import unittest
 from luokka_tulos import Tulos
-import numpy as np
+
 
 RIVIT = 6
 SARAKKEET = 7
