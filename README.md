@@ -2,7 +2,6 @@
 ![CI](https://github.com/BananaMayo/Connect4/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/BananaMayo/Connect4/branch/master/graph/badge.svg)](https://codecov.io/gh/BananaMayo/Connect4)
 
-
 Kurssi: TKT20010 Tiralabra syksy 2022, Helsingin Yliopisto
 
 Aiheena tehdä algoritmi minimaxilla joka luo AI-vastustajan pelissä "Connect Four"
