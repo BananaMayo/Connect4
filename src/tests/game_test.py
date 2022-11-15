@@ -12,7 +12,7 @@ class TestNakyma(unittest.TestCase):
         self.PELAAJAN_KIEKKO = 1
         self.PELAAJA = 0
         self.näkymä = Nakyma(0)
-        
+
     def test_nakyma(self):
         näkymä = []
         a = Nakyma._näkymä(1,näkymä,4)

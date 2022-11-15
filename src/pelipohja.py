@@ -1,10 +1,9 @@
 import random
-import pygame
-import sys
-import numpy as np
 import math
-import luokka_nakyma as ln
-
+import sys
+import pygame
+import numpy as np
+import luokka_ratkaiseva_sijotus as rs
 
 """Globaalit"""
 
@@ -53,7 +52,7 @@ class Pelin_alustukset:
         pass
 
     def luo_pelilauta():
-        pelilauta = np.zeros((RIVIT, SARAKKEET))
+        pelilauta = np.zeros((RIVIT, SARAKKEET+1))#huom! tämä leventää pelilautaa, poista jos on ongelmia!#
         return pelilauta
 
     def kiekon_sijotus(pelilauta, rivi, sarake, kiekko):
@@ -72,9 +71,6 @@ class Pelin_alustukset:
 
 
 class Pelilauta:
-    def __init__(self):
-        pass
-
     def _pelilauta(pelilauta):
         """Pelilaudan ulkonäkö; laudan värit sekä ympyrät
         luodaan tällä funktiolla
@@ -83,7 +79,7 @@ class Pelilauta:
             for rivi in range(RIVIT):
                 pygame.draw.rect(naytto, SININEN,(NELION_KOKO+sarake*NELION_KOKO, rivi*NELION_KOKO+NELION_KOKO, NELION_KOKO, NELION_KOKO))
                 pygame.draw.circle(naytto, MIDNIGHT_B,(int(NELION_KOKO+sarake*NELION_KOKO+NELION_KOKO/2), int(rivi*NELION_KOKO+NELION_KOKO+NELION_KOKO/2)), SADE)
-        
+  
         """Luodaan pelaajan kiekko sekä AI-vastustajan kiekko
         """
         for sarake in range(SARAKKEET):
@@ -95,93 +91,15 @@ class Pelilauta:
                 elif pelilauta[rivi][sarake] == AI_KIEKKO:
                     {pygame.draw.circle(naytto, PUNAINEN,
                     (int(sarake*NELION_KOKO+NELION_KOKO/2), korkeus-int(rivi*NELION_KOKO+NELION_KOKO/2)), SADE)}
-        pygame.display.update()
+    pygame.display.update()
 
-
-class Tulos:
-    """Luokalla tarkistetaan eri suuntaiset sijoitukset, eli mahdollisia
-    neljän suoria
-    """
-    def __init__(self, tulos = 0):
-        self.tulos = tulos
-
-    def _tulos(self, pelilauta, kiekko):
-        """Tässä tarkistetaan keskisarakkeella onnistunut sijoitus
-        """
-        keski_alue = [int(i) for i in list(pelilauta[:,SARAKKEET//2])]
-        laske_keski_alue = keski_alue.count(kiekko)
-        self.tulos += laske_keski_alue * 3
-
-        """Tässä tarkistetaan vaakasuunnassa onnistunut sijoitus
-        poistetaan 3 riviä jotta saadaan laskettua neljän suora
-        """
-        for rivi in range(RIVIT):
-            rivi_alue = [int(i) for i in list(pelilauta[rivi,:])]
-            for sarake in range(SARAKKEET-3):
-                näkymä_ = rivi_alue[sarake:sarake+IKKUNA]
-                self.tulos += ln._näkymä(näkymä_, kiekko)
-
-        """Tässä tarkistetaan pystysuunnassa onnistunut sijoitus,
-        iteroidaan pois 3 saraketta sekä riviä jotta
-        saadaan laskettua neljän suora
-        """
-        for sarake in range(SARAKKEET):
-            sarake_alue = [int(i) for i in list(pelilauta[:,sarake])]
-            for rivi in range(RIVIT-3):
-                näkymä_ = sarake_alue[rivi:rivi+IKKUNA]
-                self.tulos += ln._näkymä(näkymä_, kiekko)
-        
-        """ Tässä tarkistetaan diagonaalisessa suunnassa onnistunut
-        sijoitus
-        """
-        for rivi in range(RIVIT-3):
-            for sarake in range(SARAKKEET-3):
-                näkymä_ = [pelilauta[rivi+i][sarake+i] for i in range(IKKUNA)]
-                self.tulos += ln._näkymä(näkymä_, kiekko)
-
-        for rivi in range(RIVIT-3):
-            for sarake in range(SARAKKEET-3):
-                näkymä_ = [pelilauta[rivi+3-i][sarake+i] for i in range(IKKUNA)]
-                self.tulos += ln._näkymä(näkymä_, kiekko)
-
-
-class KiekonSijoitus:
-    def __init__(self, kiekon_sijoitus = []):
-        self.kiekko_lista = kiekon_sijoitus
-
-    """Funktio luo tyhjän listan johon laitetaan sellainen sarake mihin on
-    mahdollista pudottaa kiekko
-    """
-    def kiekon_sijoittaminen(self, pelilauta):
-        for sarake in range(SARAKKEET):
-            if Pelin_alustukset.kiekon_sijainnin_tarkistus(pelilauta, sarake):
-                self.kiekko_lista.append(sarake)
-        return self.kiekko_lista
-
-class ParasSiirto:
-    def __init__(self, paras_tulos = -10000):
-        self.paras_tulos = paras_tulos
-
-    def paras_siirto(self,pelilauta, kiekko):
-        kiekon_sijoitus = KiekonSijoitus.kiekon_sijoittaminen(pelilauta)
-        paras_sarake = random.choice(kiekon_sijoitus)
-        for sarake in kiekon_sijoitus:
-            rivi = Pelin_alustukset.seuraava_avoin_rivi(pelilauta, sarake)
-            c = pelilauta.copy()
-            Pelin_alustukset.kiekon_sijotus(c, rivi, sarake, kiekko)
-            tulos_ = Tulos._tulos(c, kiekko)
-            if tulos_ > self.paras_tulos:
-                self.paras_tulos = tulos_
-                paras_sarake = sarake
-        return paras_sarake
-
-
-Peli_ohi = False
 P_lauta = Pelin_alustukset.luo_pelilauta()
 Pelin_alustukset.pelilaudan_tulostus(P_lauta)
 Pelilauta._pelilauta(P_lauta)
-
+Peli_ohi = False
+pygame.display.update()
 vuoro = random.randint(PELAAJA, AI)
+
 
 while not Peli_ohi:
     for event in pygame.event.get():
@@ -194,16 +112,26 @@ while not Peli_ohi:
             if vuoro == PELAAJA:
                 pygame.draw.circle(naytto, OLIIVI, (x, int(NELION_KOKO/2)), SADE)
                 pygame.draw.circle(naytto, KELTAINEN, (x, int(NELION_KOKO/2)), SADE-3)
-        
+
         pygame.display.update()
 
         if event.type == pygame.MOUSEBUTTONDOWN:
             pygame.draw.rect(naytto, MUSTA, (0,0, leveys, NELION_KOKO))
             if vuoro == PELAAJA:
                 x = event.pos[0]
-                sarake = int(math.floor(x/NELION_KOKO))           
+                sarake = int(math.floor(x/NELION_KOKO))
                 if Pelin_alustukset.kiekon_sijainnin_tarkistus(P_lauta, sarake):
                     rivi = Pelin_alustukset.seuraava_avoin_rivi(P_lauta, sarake)
                     Pelin_alustukset.kiekon_sijotus(P_lauta, rivi, sarake, PELAAJAN_KIEKKO)
+
+                    if rs.ratkaiseva_sijotus(P_lauta, PELAAJAN_KIEKKO):
+                        #Muista laittaa tekstiä peliin!#
+                        Peli_ohi = True
+                    vuoro +=1
+                    vuoro = vuoro%2
+                    Pelin_alustukset.luo_pelilauta(P_lauta)
+                    Pelilauta._pelilauta(P_lauta)
         pygame.display.update()
-                
+
+    if Peli_ohi == True:
+        pygame.time.wait(4000)

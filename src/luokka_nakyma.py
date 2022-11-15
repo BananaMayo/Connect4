@@ -1,14 +1,3 @@
-"""Pelin rakenne (rivit ja sarakkeet)"""
-RIVIT = 6
-SARAKKEET = 7
-NELION_KOKO = 100
-SADE = int(NELION_KOKO/2 - 5)
-IKKUNA = 4
-
-"""Pelaaja ja tekoäly"""
-PELAAJA = 0
-AI = 1
-
 """Pelaajan kiekko, tekoälyn kiekko"""
 PELAAJAN_KIEKKO = 1
 AI_KIEKKO = 2
@@ -22,7 +11,7 @@ class Nakyma:
         vastustajan_kiekko = PELAAJAN_KIEKKO
         if kiekko == PELAAJAN_KIEKKO:
             vastustajan_kiekko == AI_KIEKKO
-        
+ 
         if näkymä.count(kiekko) == 4:
             self.tulos += 100
         elif näkymä.count(kiekko) == 3 and näkymä.count(TYHJA) == 1:
