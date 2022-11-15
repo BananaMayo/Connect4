@@ -15,4 +15,11 @@
 | 8.11 | 1,5h | Testikattavuuden aloitus |
 | 9.11 | 2h | Ohjelmapohjan muokkaamista (VSC) |
 | 10.11 | 2,5h | Ohjelman muokkausta, Github-repositorion päivittelyä |
-| yhteensä | 9,5h | |
+| 12.11 | 1,5h | Ohjelman rakentelua |
+| yhteensä | 11h | |
+
+## Viikko3
+| Pvm | aika | tehdyt asiat |
+| --- | --- | --- |
+| 14.11 | 1,5h | Pelin rakentelua |
+| yhteensä | - | |
