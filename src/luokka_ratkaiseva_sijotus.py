@@ -4,7 +4,9 @@ NELION_KOKO = 100
 SADE = int(NELION_KOKO/2 - 5)
 IKKUNA = 4
 
-class Ratkaiseva_sijotus:
+class RatkaisevaSijotus:
+    #pylint: disable=unsubscriptable-object
+    #pylint: disable=pointless-string-statement
     def ratkaiseva_sijotus(pelilauta, kiekko):
 
         """Vaakasuorassa saatu neljän suoran tarkistus:

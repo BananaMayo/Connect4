@@ -21,6 +21,6 @@ class TestTulos(unittest.TestCase):
         laske_keski_alue = keski_alue.count(kiekko)
         self.tulos += laske_keski_alue * 3
 
-        a = Tulos._tulos(self, pelilauta, kiekko)
+        a = Tulos.tulos_(self, pelilauta, kiekko)
 
         self.assertEqual(self.tulos, 0)

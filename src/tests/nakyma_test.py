@@ -13,30 +13,30 @@ class TestNakyma(unittest.TestCase):
         self.PELAAJA = 0
         self.näkymä = []
         self.kiekko = 1
-        Nakyma._näkymä(self.näkymä, self.kiekko)
+        Nakyma.nakyma_(self.näkymä, self.kiekko)
 
     def test_nakyma_count(self):
         näkymä = [1,1,1,1]
         kiekko = 1
-        Nakyma._näkymä(näkymä,kiekko)
+        Nakyma.nakyma_(näkymä,kiekko)
         a = näkymä.count(kiekko)
         self.assertEqual(a, 4)
 
     def test_nakyma_4(self):
         näkymä = [1,1,1,1]
         kiekko = 1
-        c = Nakyma._näkymä(näkymä,kiekko)
+        c = Nakyma.nakyma_(näkymä,kiekko)
         self.assertEqual(c, 100)
 
     def test_nakyma_3(self):
         näkymä = [1,1,1,0]
         kiekko = 1
         tyhja = 0
-        b = Nakyma._näkymä(näkymä, kiekko)
+        b = Nakyma.nakyma_(näkymä, kiekko)
         self.assertEqual(b, 1)
     
     def test_nakyma_2(self):
         näkymä = [1,1,0,0]
         kiekko = 1
-        d = Nakyma._näkymä(näkymä,kiekko)
+        d = Nakyma.nakyma_(näkymä,kiekko)
         self.assertEqual(d, 2)
