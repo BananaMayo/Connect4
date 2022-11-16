@@ -21,5 +21,8 @@
 ## Viikko3
 | Pvm | aika | tehdyt asiat |
 | --- | --- | --- |
-| 14.11 | 1,5h | Pelin rakentelua |
+| 14.11 | 1,5h | Pelin rakentelua, luokat omiin tiedostoihin |
+| 15.11 | 3h | Pelin rakentelua, luokat omiin tiedostoihin, testien tekoa |
+| 16.11 | 2h | Pelin rakentelua, testaamista, GitHub testausdokumentti |
+| 17.11 | | |
 | yhteensä | - | |
