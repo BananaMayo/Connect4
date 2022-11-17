@@ -4,6 +4,10 @@ AI_KIEKKO = 2
 TYHJA = 0
 
 class Nakyma:
+    """Luokassa käydään läpi siirroista saadut pisteet. Kuten esim.
+    jos pelaajalla on kaksi peräkkäistä kiekkoa, niin kolmannen kiekon
+    sijotus samaan suoraan lisää +5 pistettä tulokseen
+    """
     #pylint: disable=no-member
     def nakyma_(näkymä, kiekko):
         tulos = 0

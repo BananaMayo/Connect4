@@ -4,6 +4,10 @@ from luokka_kiekon_sijotus import KiekonSijoitus
 import luokka_tulos as ts
 
 class ParasSiirto:
+    """Tämä luokka löytää parhaan mahdollisen siirron. Funktio käy
+    läpi kaikki sarakeet ja kutsuu funktiota "tulos_" luokasta
+    'Tulos' ja valitsee siirron joka lisää eniten pisteitä tulokseen.
+    """
     def __init__(self, paras_tulos = -10000):
         self.paras_tulos = paras_tulos
 
