@@ -8,10 +8,8 @@ class ParasSiirto:
     läpi kaikki sarakeet ja kutsuu funktiota "tulos_" luokasta
     'Tulos' ja valitsee siirron joka lisää eniten pisteitä tulokseen.
     """
-    def __init__(self, paras_tulos = -10000):
-        self.paras_tulos = paras_tulos
-
     def paras_siirto(self, pelilauta, kiekko):
+        paras_tulos = -10000
         kiekon_sijoitus = KiekonSijoitus.kiekon_sijoittaminen(pelilauta)
         paras_sarake = random.choice(kiekon_sijoitus)
         for sarake in kiekon_sijoitus:
@@ -19,7 +17,7 @@ class ParasSiirto:
             kopio = pelilauta.copy()
             PelinAlustukset.kiekon_sijotus(kopio, rivi, sarake, kiekko)
             tulos = ts.Tulos.tulos_(kopio, kiekko)
-            if tulos > self.paras_tulos:
-                self.paras_tulos = tulos
+            if tulos > paras_tulos:
+                paras_tulos = tulos
                 paras_sarake = sarake
         return paras_sarake
