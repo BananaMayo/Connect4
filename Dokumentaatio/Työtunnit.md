@@ -24,5 +24,5 @@
 | 14.11 | 1,5h | Pelin rakentelua, luokat omiin tiedostoihin |
 | 15.11 | 3h | Pelin rakentelua, luokat omiin tiedostoihin, testien tekoa |
 | 16.11 | 2h | Pelin rakentelua, testaamista, GitHub testausdokumentti |
-| 17.11 | | |
-| yhteensä | - | |
+| 17.11 | 2,5h | Minimax-algoritmin aloitus sekä luokkien kommentointia |
+| yhteensä | 9h | |
