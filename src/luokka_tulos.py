@@ -9,15 +9,13 @@ IKKUNA = 4
 class Tulos:
     """Luokalla tarkistetaan eri suuntaiset sijoitukset
     """
-    def __init__(self, tulos = 0):
-        self.tulos = tulos
-
-    def tulos_(self, pelilauta, kiekko):
+    def tulos_(pelilauta, kiekko):
+        tulos = 0
         # Tässä tarkistetaan keskisarakkeella onnistunut sijoitus
 
         keski_alue = [int(i) for i in list(pelilauta[:,SARAKKEET//2])]
         laske_keski_alue = keski_alue.count(kiekko)
-        self.tulos += laske_keski_alue * 3
+        tulos += laske_keski_alue * 3
 
         # Tässä tarkistetaan vaakasuunnassa onnistunut sijoitus
 
@@ -25,7 +23,7 @@ class Tulos:
             rivi_alue = [int(i) for i in list(pelilauta[rivi,:])]
             for sarake in range(SARAKKEET-3):
                 näkymä_ = rivi_alue[sarake:sarake+IKKUNA]
-                self.tulos += Nakyma.nakyma_(näkymä_, kiekko)
+                tulos += Nakyma.nakyma_(näkymä_, kiekko)
 
         # Tässä tarkistetaan pystysuunnassa onnistunut sijoitus
 
@@ -33,16 +31,17 @@ class Tulos:
             sarake_alue = [int(i) for i in list(pelilauta[:,sarake])]
             for rivi in range(RIVIT-3):
                 näkymä_ = sarake_alue[rivi:rivi+IKKUNA]
-                self.tulos += Nakyma.nakyma_(näkymä_, kiekko)
+                tulos += Nakyma.nakyma_(näkymä_, kiekko)
 
         # Tässä tarkistetaan diagonaalisessa suunnassa onnistunut sijoitus
 
         for rivi in range(RIVIT-3):
             for sarake in range(SARAKKEET-3):
                 näkymä_ = [pelilauta[rivi+i][sarake+i] for i in range(IKKUNA)]
-                self.tulos += Nakyma.nakyma_(näkymä_, kiekko)
+                tulos += Nakyma.nakyma_(näkymä_, kiekko)
 
         for rivi in range(RIVIT-3):
             for sarake in range(SARAKKEET-3):
                 näkymä_ = [pelilauta[rivi+3-i][sarake+i] for i in range(IKKUNA)]
-                self.tulos += Nakyma.nakyma_(näkymä_, kiekko)
+                tulos += Nakyma.nakyma_(näkymä_, kiekko)
+        return tulos
