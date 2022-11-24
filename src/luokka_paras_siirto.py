@@ -1,6 +1,5 @@
 import random
-from pelipohja import PelinAlustukset
-from luokka_kiekon_sijotus import KiekonSijoitus
+from pelipohja import PelinAlustukset, KiekonSijoitus
 import luokka_tulos as ts
 
 class ParasSiirto:
