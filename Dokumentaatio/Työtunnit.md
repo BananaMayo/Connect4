@@ -26,3 +26,12 @@
 | 16.11 | 2h | Pelin rakentelua, testaamista, GitHub testausdokumentti |
 | 17.11 | 2,5h | Minimax-algoritmin aloitus sekä luokkien kommentointia |
 | yhteensä | 9h | |
+
+## Viikko4
+| Pvm | aika | tehdyt asiat |
+| --- | --- | --- |
+| 21.11 | 1,5h | Pelin muokkailua ja minimax |
+| 24.11 | 3h | Minimaxin viimeistely, peli toimiva |
+| 25.11| | |
+| 26.11 | | |
+| yhteensä | 4,5h | |
