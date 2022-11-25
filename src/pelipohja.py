@@ -73,7 +73,7 @@ pygame.display.set_caption('CONNECT4')
 Pelilauta.pelilauta_(P_lauta)
 pygame.display.update()
 
-fontti = pygame.font.SysFont("monospace", 100)
+fontti = pygame.font.SysFont("Helvetica", 48)
 #pelivuorot = random.randint(PELAAJA, AI)
 
 
@@ -118,7 +118,8 @@ class Pelaa:
                             
                             # Jos pelaaja tekee ratkaisevan sijoituksen lopetetaan peli
                             if lrs.RatkaisevaSijotus.ratkaiseva_sijotus(P_lauta, PELAAJAN_KIEKKO):
-                                #Muista laittaa tekstiä peliin!#
+                                tekstia = fontti.render("Voitit, hienoa!!!", 1, MIDNIGHT_B)
+                                naytto.blit(tekstia, (220,25))
                                 PELI_OHI = True
                             vuoro +=1
                             vuoro = vuoro%2
@@ -129,16 +130,17 @@ class Pelaa:
             if vuoro == AI and not PELI_OHI:
                 # SYVYYS = 5, vaikeustasoa voi muokata vaihtamalla syvyyttä, mitä syvemmälle algoritmi etsii
                 # sitä vaikeammaksi tekoäly muuttuu
-                sarake, MiniMax_pisteytys = MiniMax.minimax(P_lauta, 5, -math.inf, math.inf, True)
+                sarake, MiniMax_pisteytys = MiniMax.minimax(P_lauta, 1, -math.inf, math.inf, True)
                 if PelinAlustukset.kiekon_sijainnin_tarkistus(P_lauta, sarake):
                     rivi = PelinAlustukset.seuraava_avoin_rivi(P_lauta, sarake)
                     #Pudotetaan tekoälyn kiekko
                     PelinAlustukset.kiekon_sijotus(P_lauta, rivi, sarake, AI_KIEKKO)
-
                     print(sarake, MiniMax_pisteytys)
 
                     #Jos tekoäly tekee ratkaisevan sijoituksen lopetetaan peli
                     if lrs.RatkaisevaSijotus.ratkaiseva_sijotus(P_lauta, AI_KIEKKO):
+                        tekstia_2 = fontti.render("Harmi, uudestaan vaan...", 1, PUNAINEN)
+                        naytto.blit(tekstia_2, (78,15))
                         PELI_OHI = True
                     PelinAlustukset.pelilaudan_tulostus(P_lauta)
                     Pelilauta.pelilauta_(P_lauta)
