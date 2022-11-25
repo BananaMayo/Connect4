@@ -18,3 +18,4 @@ Ohjelmointikieli tulee olemaan Python
 - [Viikko1](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Viikkoraportit/viikko1.md)
 - [Viikko2](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Viikkoraportit/viikko2.md)
 - [Viikko3](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Viikkoraportit/viikko3.md)
+- [Ciikko4](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Viikkoraportit/viikko4.md)
