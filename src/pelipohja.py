@@ -130,7 +130,7 @@ class Pelaa:
             if vuoro == AI and not PELI_OHI:
                 # SYVYYS = 5, vaikeustasoa voi muokata vaihtamalla syvyyttä, mitä syvemmälle algoritmi etsii
                 # sitä vaikeammaksi tekoäly muuttuu
-                sarake, MiniMax_pisteytys = MiniMax.minimax(P_lauta, 1, -math.inf, math.inf, True)
+                sarake, MiniMax_pisteytys = MiniMax.minimax(P_lauta, 5, -math.inf, math.inf, True)
                 if PelinAlustukset.kiekon_sijainnin_tarkistus(P_lauta, sarake):
                     rivi = PelinAlustukset.seuraava_avoin_rivi(P_lauta, sarake)
                     #Pudotetaan tekoälyn kiekko
