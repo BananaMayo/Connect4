@@ -1,13 +1,14 @@
-import random
+""" import random
 from pelipohja import PelinAlustukset, KiekonSijoitus
 import luokka_tulos as ts
 
-class ParasSiirto:
-    """Tämä luokka löytää parhaan mahdollisen siirron. Funktio käy
+class ParasSiirto: """
+
+"""Tämä luokka löytää parhaan mahdollisen siirron. Funktio käy
     läpi kaikki sarakeet ja kutsuu funktiota "tulos_" luokasta
     'Tulos' ja valitsee siirron joka lisää eniten pisteitä tulokseen.
     """
-    def paras_siirto(self, pelilauta, kiekko):
+""" def paras_siirto(self, pelilauta, kiekko):
         paras_tulos = -10000
         kiekon_sijoitus = KiekonSijoitus.kiekon_sijoittaminen(pelilauta)
         paras_sarake = random.choice(kiekon_sijoitus)
@@ -19,4 +20,4 @@ class ParasSiirto:
             if tulos > paras_tulos:
                 paras_tulos = tulos
                 paras_sarake = sarake
-        return paras_sarake
+        return paras_sarake """
