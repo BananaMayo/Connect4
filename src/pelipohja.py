@@ -157,7 +157,6 @@ class MiniMax:
 # PYGAME alustukset
 P_lauta = PelinAlustukset.luo_pelilauta()
 PelinAlustukset.pelilaudan_tulostus(P_lauta)
-PELI_OHI = False
 
 pygame.init()
 
@@ -173,71 +172,77 @@ pygame.display.update()
 fontti = pygame.font.SysFont("monospace", 100)
 #pelivuorot = random.randint(PELAAJA, AI)
 
-vuoro = random.randint(PELAAJA, AI)
 
 
 """Tämä osio kattaa pelin tapahtumat silloin kun 
 peli on käynnissä, ts. kun peliä ei ole vielä voitettu
 jomman kumman osapuolen toimesta
 """
-while not PELI_OHI:
-    #alustetaan pelin sulkeminen 'system-exitillä', eli kun pelin aikana pelaaja 
-    #painaa punaista exit-painiketta peli sammuu
+class Pelaa:
+    def start():
+        PELI_OHI = False
+        vuoro = random.randint(PELAAJA, AI)
+        while not PELI_OHI:
+            #alustetaan pelin sulkeminen 'system-exitillä', eli kun pelin aikana pelaaja 
+            #painaa punaista exit-painiketta peli sammuu
 
-    for event in pygame.event.get():
-        #pylint: disable=no-member
-        if event.type == pygame.QUIT:
-            sys.exit()
+            for event in pygame.event.get():
+                #pylint: disable=no-member
+                if event.type == pygame.QUIT:
+                    sys.exit()
 
-        #Tämä osio näyttää pelaajan kiekon ylärivillä kun on hänen vuoro
-        if event.type == pygame.MOUSEMOTION:
-            pygame.draw.rect(naytto, PUU_2, (0,0, LEVEYS, NELION_KOKO))
-            #x = event.pos[0]
-            if vuoro == PELAAJA:
-                #pygame.draw.circle(naytto, OLIIVI, (x, int(NELION_KOKO/2)), SADE)
-                pygame.draw.circle(naytto, MIDNIGHT_B, (LEVEYS//2, NELION_KOKO//2), SADE)
+                #Tämä osio näyttää pelaajan kiekon ylärivillä kun on hänen vuoro
+                if event.type == pygame.MOUSEMOTION:
+                    pygame.draw.rect(naytto, PUU_2, (0,0, LEVEYS, NELION_KOKO))
+                    #x = event.pos[0]
+                    if vuoro == PELAAJA:
+                        #pygame.draw.circle(naytto, OLIIVI, (x, int(NELION_KOKO/2)), SADE)
+                        pygame.draw.circle(naytto, MIDNIGHT_B, (LEVEYS//2, NELION_KOKO//2), SADE)
 
-        pygame.display.update()
+                pygame.display.update()
 
-        #Tämä osio määrittelee mitä tapahtuu hiiren napin painalluksesta, ts. tiputtaa kiekon
-        #sarakkeeseen johon on 'klikattu', mikäli se on sallittu sarake (ei täynnä)
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            pygame.draw.rect(naytto, PUU_2, (0,0, LEVEYS, NELION_KOKO))
-            if vuoro == PELAAJA:
-                x = event.pos[0]
-                sarake = int(math.floor(x/NELION_KOKO))
+                #Tämä osio määrittelee mitä tapahtuu hiiren napin painalluksesta, ts. tiputtaa kiekon
+                #sarakkeeseen johon on 'klikattu', mikäli se on sallittu sarake (ei täynnä)
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    pygame.draw.rect(naytto, PUU_2, (0,0, LEVEYS, NELION_KOKO))
+                    if vuoro == PELAAJA:
+                        x = event.pos[0]
+                        sarake = int(math.floor(x/NELION_KOKO))
+                        if PelinAlustukset.kiekon_sijainnin_tarkistus(P_lauta, sarake):
+                            rivi = PelinAlustukset.seuraava_avoin_rivi(P_lauta, sarake)
+                            PelinAlustukset.kiekon_sijotus(P_lauta, rivi, sarake, PELAAJAN_KIEKKO)
+                            
+                            # Jos pelaaja tekee ratkaisevan sijoituksen lopetetaan peli
+                            if lrs.RatkaisevaSijotus.ratkaiseva_sijotus(P_lauta, PELAAJAN_KIEKKO):
+                                #Muista laittaa tekstiä peliin!#
+                                PELI_OHI = True
+                            vuoro +=1
+                            vuoro = vuoro%2
+                            PelinAlustukset.pelilaudan_tulostus(P_lauta)
+                            Pelilauta.pelilauta_(P_lauta)
+                pygame.display.update()
+
+            if vuoro == AI and not PELI_OHI:
+                # SYVYYS = 5, vaikeustasoa voi muokata vaihtamalla syvyyttä, mitä syvemmälle algoritmi etsii
+                # sitä vaikeammaksi tekoäly muuttuu
+                sarake, MiniMax_pisteytys = MiniMax.minimax(P_lauta, 5, -math.inf, math.inf, True)
                 if PelinAlustukset.kiekon_sijainnin_tarkistus(P_lauta, sarake):
                     rivi = PelinAlustukset.seuraava_avoin_rivi(P_lauta, sarake)
-                    PelinAlustukset.kiekon_sijotus(P_lauta, rivi, sarake, PELAAJAN_KIEKKO)
-                    
-                    # Jos pelaaja tekee ratkaisevan sijoituksen lopetetaan peli
-                    if lrs.RatkaisevaSijotus.ratkaiseva_sijotus(P_lauta, PELAAJAN_KIEKKO):
-                        #Muista laittaa tekstiä peliin!#
+                    #Pudotetaan tekoälyn kiekko
+                    PelinAlustukset.kiekon_sijotus(P_lauta, rivi, sarake, AI_KIEKKO)
+
+                    print(sarake, MiniMax_pisteytys)
+
+                    #Jos tekoäly tekee ratkaisevan sijoituksen lopetetaan peli
+                    if lrs.RatkaisevaSijotus.ratkaiseva_sijotus(P_lauta, AI_KIEKKO):
                         PELI_OHI = True
-                    vuoro +=1
-                    vuoro = vuoro%2
                     PelinAlustukset.pelilaudan_tulostus(P_lauta)
                     Pelilauta.pelilauta_(P_lauta)
-        pygame.display.update()
+                    vuoro +=1
+                    vuoro = vuoro%2
 
-    if vuoro == AI and not PELI_OHI:
-        # SYVYYS = 5, vaikeustasoa voi muokata vaihtamalla syvyyttä, mitä syvemmälle algoritmi etsii
-        # sitä vaikeammaksi tekoäly muuttuu
-        sarake, MiniMax_pisteytys = MiniMax.minimax(P_lauta, 5, -math.inf, math.inf, True)
-        if PelinAlustukset.kiekon_sijainnin_tarkistus(P_lauta, sarake):
-            rivi = PelinAlustukset.seuraava_avoin_rivi(P_lauta, sarake)
-            #Pudotetaan tekoälyn kiekko
-            PelinAlustukset.kiekon_sijotus(P_lauta, rivi, sarake, AI_KIEKKO)
+            if PELI_OHI is True:
+                pygame.time.wait(4000)
 
-            print(sarake, MiniMax_pisteytys)
-
-            #Jos tekoäly tekee ratkaisevan sijoituksen lopetetaan peli
-            if lrs.RatkaisevaSijotus.ratkaiseva_sijotus(P_lauta, AI_KIEKKO):
-                PELI_OHI = True
-            PelinAlustukset.pelilaudan_tulostus(P_lauta)
-            Pelilauta.pelilauta_(P_lauta)
-            vuoro +=1
-            vuoro = vuoro%2
-
-    if PELI_OHI is True:
-        pygame.time.wait(4000)
+if __name__ == "__main__":
+    Pelaa.start()

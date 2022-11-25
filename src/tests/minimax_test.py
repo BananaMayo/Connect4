@@ -1,6 +1,6 @@
 import unittest
 import math
-from pelipohja import MiniMax, MiniMax_pisteytys
+from pelipohja import MiniMax, tulos
 
 RIVIT = 6
 SARAKKEET = 7
@@ -14,34 +14,28 @@ class TestMinimax (unittest.TestCase):
         self.beta = min()
 
     def test_minimax_ai_voitto(self):
-        self.minimax = MiniMax
-        self.pisteet = MiniMax_pisteytys
+        minimax = MiniMax
         syvyys = 5
         pelilauta = [[0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 1, 0, 0, 0,],
-        [0, 0, 0, 1, 0, 0, 0,],
-        [0, 0, 0, 2, 0, 0, 0,],
-        [0, 0, 0, 1, 0, 0, 0,],
-        [1, 2, 2, 2, 2, 0, 0,]]
-        self.minimax.minimax(pelilauta, syvyys, -math.inf, math.inf, True)
+                     [0, 0, 0, 1, 0, 0, 0,],
+                     [0, 0, 0, 1, 0, 0, 0,],
+                     [0, 0, 0, 2, 0, 0, 0,],
+                     [0, 0, 0, 1, 0, 0, 0,],
+                     [1, 2, 2, 2, 2, 0, 0,]]
+
+        a = minimax.minimax(pelilauta, syvyys, -math.inf, math.inf, True)
         ai_pisteet = 10000000000000000
-        self.assertEqual(self.pisteet, ai_pisteet)
+        self.assertEqual(a[1], ai_pisteet)
     
-    """ def test_ai_aloituspisteet(self):
+    def test_ai_havio(self):
         self.minimax = MiniMax
-        self.pisteet = MiniMax_pisteytys
         syvyys = 5
         pelilauta = [[0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 0, 0, 0, 0,],
-        [0, 0, 0, 2, 0, 0, 0,]]
-        self.minimax.minimax(pelilauta, syvyys, -math.inf, math.inf, True)
-        while True:
-            for sarake in range(SARAKKEET):
-                for rivi in range(RIVIT):
-                    if pelilauta[rivi][sarake].count(2) == 1:
-                        break
-                    ai_pisteet = 40
-                    self.assertEqual(self.pisteet, ai_pisteet) """
+                     [0, 0, 0, 2, 0, 0, 0,],
+                     [0, 0, 0, 2, 0, 0, 0,],
+                     [0, 0, 0, 1, 0, 0, 0,],
+                     [0, 0, 0, 2, 0, 0, 0,],
+                     [2, 1, 1, 1, 1, 0, 0,]]
+        b = self.minimax.minimax(pelilauta, syvyys, -math.inf, math.inf, True)
+        ai_pisteet = -10000000000000000
+        self.assertEqual(b[1], ai_pisteet)
