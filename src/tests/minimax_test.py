@@ -1,7 +1,7 @@
 import unittest
 import math
 import pygame
-from pelipohja import MiniMax, tulos
+from pelin_alustukset import MiniMax
 
 RIVIT = 6
 SARAKKEET = 7
