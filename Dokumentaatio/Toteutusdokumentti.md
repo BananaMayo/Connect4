@@ -1,6 +1,6 @@
 ### Ohjelman yleisrakenne
-
-![TiraLabra_ohjelman_rakenne](https://user-images.githubusercontent.com/101586122/203369161-ce0c0eb4-c449-409c-aa76-ea7df1291960.png)
+Tässä kuva ohjelman yleisrakenteesta, on vielä keskeneräinen. (Yksi luokka menee poistoon)
+![image](https://user-images.githubusercontent.com/101586122/203940198-a1f20c67-a02d-46df-b1cb-c1bdbf1bc161.png)
 
 
 ### Saavutetut aika- ja tilavaativuudet (m.m. O-analyysit pseudokoodista)
