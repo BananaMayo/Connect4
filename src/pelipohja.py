@@ -229,6 +229,8 @@ while not PELI_OHI:
             #Pudotetaan tekoälyn kiekko
             PelinAlustukset.kiekon_sijotus(P_lauta, rivi, sarake, AI_KIEKKO)
 
+            print(sarake, MiniMax_pisteytys)
+
             #Jos tekoäly tekee ratkaisevan sijoituksen lopetetaan peli
             if lrs.RatkaisevaSijotus.ratkaiseva_sijotus(P_lauta, AI_KIEKKO):
                 PELI_OHI = True
