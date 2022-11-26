@@ -7,8 +7,9 @@ SARAKKEET = 7
 NELION_KOKO = 100
 
 class TestPelinAlustukset(unittest.TestCase):
-    def setup(self):
-        pass
+    def setUp(self) -> None:
+        return super().setUp()
+
     def test_luo_pelilauta(self):
         pelilauta = [[0., 0., 0., 0., 0., 0., 0.,],[0., 0., 0., 0., 0., 0., 0.,],[0., 0., 0., 0., 0., 0., 0.,],[0., 0., 0., 0., 0., 0., 0.,],[0., 0., 0., 0., 0., 0., 0.,],[0., 0., 0., 0., 0., 0., 0.,]]
         peli = PelinAlustukset

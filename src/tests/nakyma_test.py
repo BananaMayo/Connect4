@@ -14,6 +14,13 @@ class TestNakyma(unittest.TestCase):
         self.näkymä = []
         self.kiekko = 1
         Nakyma.nakyma_(self.näkymä, self.kiekko)
+    
+    def test_kiekko(self):
+        kiekko = PELAAJAN_KIEKKO
+        näkymä = []
+        testi = Nakyma.nakyma_(näkymä, kiekko)
+        print(testi)
+        #self.assertEqual(kiekko, AI_KIEKKO)
 
     def test_nakyma_count(self):
         näkymä = [1,1,1,1]

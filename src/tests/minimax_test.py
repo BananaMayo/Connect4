@@ -11,10 +11,8 @@ PELAAJAN_KIEKKO = 1
 AI_KIEKKO = 2
 
 class TestMinimax (unittest.TestCase):
-    def setup(self):
-
-        self.alpha = max()
-        self.beta = min()
+    def setUp(self) -> None:
+        return super().setUp()
 
     def test_minimax_ai_voitto(self):
         pygame.init()
