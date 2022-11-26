@@ -1,7 +1,6 @@
 import random
 import math
 import numpy as np
-import numpy as np
 import luokka_ratkaiseva_sijotus as lrs
 import luokka_tulos as lt
 ### Globaalit ###

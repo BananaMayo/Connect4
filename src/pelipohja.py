@@ -135,7 +135,7 @@ class Pelaa:
                     rivi = PelinAlustukset.seuraava_avoin_rivi(P_lauta, sarake)
                     #Pudotetaan tekoälyn kiekko
                     PelinAlustukset.kiekon_sijotus(P_lauta, rivi, sarake, AI_KIEKKO)
-                    print(sarake, MiniMax_pisteytys)
+                    #print(sarake, MiniMax_pisteytys)
 
                     #Jos tekoäly tekee ratkaisevan sijoituksen lopetetaan peli
                     if lrs.RatkaisevaSijotus.ratkaiseva_sijotus(P_lauta, AI_KIEKKO):
