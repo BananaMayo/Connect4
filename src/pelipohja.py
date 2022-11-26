@@ -140,8 +140,8 @@ class Pelaa:
                     PelinAlustukset.kiekon_sijotus(P_lauta, rivi, sarake, AI_KIEKKO)
                     #print(sarake, MiniMax_pisteytys)
                     loppu_max = time.time()
-                    aika = loppu_max-alku_max
-                    print("aikaa kului", aika, "s")
+                    aika = (loppu_max-alku_max)
+                    print("aikaa kului",aika,"s")
 
                     #Jos tekoäly tekee ratkaisevan sijoituksen lopetetaan peli
                     if lrs.RatkaisevaSijotus.ratkaiseva_sijotus(P_lauta, AI_KIEKKO):
@@ -154,8 +154,6 @@ class Pelaa:
                     vuoro = vuoro%2
 
             if PELI_OHI is True:
-                #loppu = time.time()
-                #print("aikaa kului", loppu-alku, "s")
                 pygame.time.wait(4000)
 
 if __name__ == "__main__":
