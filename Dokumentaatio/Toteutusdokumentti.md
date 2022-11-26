@@ -4,7 +4,7 @@ Tässä kuva ohjelman yleisrakenteesta:
 
 ### Saavutetut aika- ja tilavaativuudet (m.m. O-analyysit pseudokoodista)
 Mitattu aika: kuinka nopeasti minimax-algoritmi (alpha-beta karsinnalla) sijottaa kiekon pelilaudalle
-| **TESTI 1**|Monesko kiekko | AI (Minimax) | average time| **TESTI 2**|Monesko kiekko | AI (Minimax) | average time|
+| **TESTI 1**|Monesko kiekko | AI (Minimax) | Aika| **TESTI 2**|Monesko kiekko | AI (Minimax) | Aika |
 |---|----|-----|-------------|--- |----|-----|-------------|
 | | 1 | AI | 0.002861 ms|    | 1 | AI | 0.004053 ms|
 | | 2 | AI |  0.002623 ms |  | 2 | AI | 0.002384 ms |
