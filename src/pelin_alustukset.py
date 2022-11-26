@@ -1,5 +1,6 @@
 import random
 import math
+import time
 import numpy as np
 import luokka_ratkaiseva_sijotus as lrs
 import luokka_tulos as lt
@@ -92,8 +93,9 @@ class MiniMax:
                     return (None, -10000000000000000)
                 else:
                     return (None, 0)
-            else:
+            else:                
                 return (None, tulos.tulos_(pelilauta, AI_KIEKKO))
+
         #MaximizingPlayer osio
         if maximizingPlayer:
             satun_sarake = random.choice(sallittu_sijotus)
@@ -108,8 +110,9 @@ class MiniMax:
                     satun_sarake = sarake
                 alpha = max(alpha, nykyinen_arvo)
                 if alpha >= beta:
-                    break
-            return satun_sarake, nykyinen_arvo
+                    break    
+            return satun_sarake, nykyinen_arvo 
+
         #MinimizingPlayer osio
         else:
             nykyinen_arvo = math.inf

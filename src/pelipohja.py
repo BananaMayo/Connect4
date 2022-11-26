@@ -1,5 +1,6 @@
 import random
 import math
+import time
 import sys
 import pygame
 from pelin_alustukset import PelinAlustukset
@@ -84,6 +85,7 @@ jomman kumman osapuolen toimesta
 """
 class Pelaa:
     def start():
+        #alku = time.time()
         PELI_OHI = False
         vuoro = random.randint(PELAAJA, AI)
         while not PELI_OHI:
@@ -131,11 +133,15 @@ class Pelaa:
                 # SYVYYS = 5, vaikeustasoa voi muokata vaihtamalla syvyyttä, mitä syvemmälle algoritmi etsii
                 # sitä vaikeammaksi tekoäly muuttuu
                 sarake, MiniMax_pisteytys = MiniMax.minimax(P_lauta, 5, -math.inf, math.inf, True)
+                alku_max = time.time()
                 if PelinAlustukset.kiekon_sijainnin_tarkistus(P_lauta, sarake):
                     rivi = PelinAlustukset.seuraava_avoin_rivi(P_lauta, sarake)
                     #Pudotetaan tekoälyn kiekko
                     PelinAlustukset.kiekon_sijotus(P_lauta, rivi, sarake, AI_KIEKKO)
                     #print(sarake, MiniMax_pisteytys)
+                    loppu_max = time.time()
+                    aika = loppu_max-alku_max
+                    print("aikaa kului", aika, "s")
 
                     #Jos tekoäly tekee ratkaisevan sijoituksen lopetetaan peli
                     if lrs.RatkaisevaSijotus.ratkaiseva_sijotus(P_lauta, AI_KIEKKO):
@@ -148,6 +154,8 @@ class Pelaa:
                     vuoro = vuoro%2
 
             if PELI_OHI is True:
+                #loppu = time.time()
+                #print("aikaa kului", loppu-alku, "s")
                 pygame.time.wait(4000)
 
 if __name__ == "__main__":
