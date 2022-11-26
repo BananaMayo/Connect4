@@ -32,6 +32,8 @@
 | --- | --- | --- |
 | 21.11 | 1,5h | Pelin muokkailua ja minimax |
 | 24.11 | 3h | Minimaxin viimeistely, peli toimiva |
-| 25.11| | |
+| 24.11 | 2h | Toteutusdokumentin aloitus |
+| 25.11| 4h | Minimax-algoritmin testaamista, refaktorointia|
+| 25.11 | 0,5h | Testausdokumentin kirjoittelua |
 | 26.11 | | |
-| yhteensä | 4,5h | |
+| yhteensä | 11h | |
