@@ -2,7 +2,9 @@
 Tässä kuva ohjelman yleisrakenteesta:
 ![image](https://user-images.githubusercontent.com/101586122/204043786-ad1dfa48-cf0f-4355-93f1-dc0a47a92f06.png)
 
-### Saavutetut aika- ja tilavaativuudet (m.m. O-analyysit pseudokoodista)
+### Saavutetut aika- ja tilavaativuudet (m.m. O-analyysit pseudokoodista) 
+*keskeneräinen*
+
 Mitattu aika: kuinka nopeasti minimax-algoritmi (alpha-beta karsinnalla) sijottaa kiekon pelilaudalle
 | **TESTI 1**|Monesko kiekko | AI (Minimax) | Aika| **TESTI 2**|Monesko kiekko | AI (Minimax) | Aika |
 |---|----|-----|-------------|--- |----|-----|-------------|

@@ -35,5 +35,5 @@
 | 24.11 | 2h | Toteutusdokumentin aloitus |
 | 25.11| 4h | Minimax-algoritmin testaamista, refaktorointia|
 | 25.11 | 0,5h | Testausdokumentin kirjoittelua |
-| 26.11 | | |
-| yhteensä | 11h | |
+| 26.11 | 2h | Testejä, ajan mittailua, Githubiin kirjoittelua |
+| yhteensä | 13h | |
