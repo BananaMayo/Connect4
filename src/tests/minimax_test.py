@@ -57,15 +57,14 @@ class TestMinimax (unittest.TestCase):
         ai_pisteet = 0
         self.assertEqual(c[1], ai_pisteet)
 
-"""     def test_pisteytys(self):
+"""     def test_true_arvo(self):
         pelilauta= [[0, 0, 0, 0, 0, 0, 0,],
                     [0, 0, 0, 0, 0, 0, 0,],
                     [0, 0, 0, 0, 0, 0, 0,],
                     [0, 0, 0, 0, 0, 0, 0,],
                     [0, 0, 0, 2, 0, 0, 0,],
                     [0, 0, 1, 1, 2, 0, 0,]]
-        sarake, MiniMax_pisteytys = MiniMax.minimax(pelilauta, 5, -math.inf, math.inf, True)
-        self.assertAlmostEqual(sarake, 4)
-        self.assertAlmostEqual(MiniMax_pisteytys, 40) """
+        mini = MiniMax.minimax(pelilauta, 5, -math.inf, math.inf, maximizingPlayer=True)
+        self.assertAlmostEqual(mini, True) """
 
 

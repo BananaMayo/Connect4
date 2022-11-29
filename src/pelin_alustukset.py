@@ -1,6 +1,5 @@
 import random
 import math
-import time
 import numpy as np
 import luokka_ratkaiseva_sijotus as lrs
 import luokka_tulos as lt
@@ -36,6 +35,7 @@ TYHJA = 0
 
 #Pelilaudan alustuksia
 #pylint: disable=no-self-argument
+#pylint: disable=invalid-name
 class PelinAlustukset:
     #pylint: disable=redefined-outer-name
     #pylint: disable=unsubscriptable-object
@@ -74,10 +74,11 @@ class KiekonSijoitus:
         return kiekko_lista
 
 def paate_solmu(pelilauta):
-        return voitto_siirto.ratkaiseva_sijotus(pelilauta, PELAAJAN_KIEKKO) or voitto_siirto.ratkaiseva_sijotus(pelilauta, AI_KIEKKO) or len(KiekonSijoitus.kiekon_sijoittaminen(pelilauta)) == 0
+    return voitto_siirto.ratkaiseva_sijotus(pelilauta, PELAAJAN_KIEKKO) or voitto_siirto.ratkaiseva_sijotus(pelilauta, AI_KIEKKO) or len(KiekonSijoitus.kiekon_sijoittaminen(pelilauta)) == 0
 
 voitto_siirto = lrs.RatkaisevaSijotus
 tulos = lt.Tulos
+
 class MiniMax:
     """Minimax-algoritmi AI-tekoälyä varten. Luokkassa käytetään alpha-beta karsintaa
     jonka takia funktiossa on määriteltynä 'alpha' ja 'beta'.
@@ -93,7 +94,7 @@ class MiniMax:
                     return (None, -10000000000000000)
                 else:
                     return (None, 0)
-            else:                
+            else:
                 return (None, tulos.tulos_(pelilauta, AI_KIEKKO))
 
         #MaximizingPlayer osio
@@ -110,9 +111,8 @@ class MiniMax:
                     satun_sarake = sarake
                 alpha = max(alpha, nykyinen_arvo)
                 if alpha >= beta:
-                    break    
-            return satun_sarake, nykyinen_arvo 
-
+                    break
+            return satun_sarake, nykyinen_arvo
         #MinimizingPlayer osio
         else:
             nykyinen_arvo = math.inf

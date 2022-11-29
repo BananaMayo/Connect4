@@ -36,7 +36,7 @@ AI = 1
 PELAAJAN_KIEKKO = 1
 AI_KIEKKO = 2
 TYHJA = 0
-
+#pylint: disable=invalid-name
 class Pelilauta:
     def pelilauta_(pelilauta):
         """Pelilaudan ulkonäkö; laudan värit sekä ympyrät
@@ -79,7 +79,7 @@ fontti = pygame.font.SysFont("Helvetica", 48)
 
 
 
-"""Tämä osio kattaa pelin tapahtumat silloin kun 
+"""Tämä osio kattaa pelin tapahtumat silloin kun
 peli on käynnissä, ts. kun peliä ei ole vielä voitettu
 jomman kumman osapuolen toimesta
 """
@@ -89,7 +89,7 @@ class Pelaa:
         PELI_OHI = False
         vuoro = random.randint(PELAAJA, AI)
         while not PELI_OHI:
-            #alustetaan pelin sulkeminen 'system-exitillä', eli kun pelin aikana pelaaja 
+            #alustetaan pelin sulkeminen 'system-exitillä', eli kun pelin aikana pelaaja
             #painaa punaista exit-painiketta peli sammuu
 
             for event in pygame.event.get():
@@ -117,7 +117,7 @@ class Pelaa:
                         if PelinAlustukset.kiekon_sijainnin_tarkistus(P_lauta, sarake):
                             rivi = PelinAlustukset.seuraava_avoin_rivi(P_lauta, sarake)
                             PelinAlustukset.kiekon_sijotus(P_lauta, rivi, sarake, PELAAJAN_KIEKKO)
-                            
+
                             # Jos pelaaja tekee ratkaisevan sijoituksen lopetetaan peli
                             if lrs.RatkaisevaSijotus.ratkaiseva_sijotus(P_lauta, PELAAJAN_KIEKKO):
                                 tekstia = fontti.render("Voitit, hienoa!!!", 1, MIDNIGHT_B)

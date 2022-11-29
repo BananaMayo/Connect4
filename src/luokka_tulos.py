@@ -7,6 +7,7 @@ SADE = int(NELION_KOKO/2 - 5)
 IKKUNA = 4
 
 class Tulos:
+    #pylint: disable=unsubscriptable-object
     """Luokalla tarkistetaan eri suuntaiset sijoitukset
     """
     def tulos_(pelilauta, kiekko):

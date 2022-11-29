@@ -7,7 +7,7 @@ IKKUNA = 4
 class RatkaisevaSijotus:
     #pylint: disable=unsubscriptable-object
     #pylint: disable=pointless-string-statement
-    """Luokan funktio tarkistaa erikseen neljän suoran laudalla, sisältää 
+    """Luokan funktio tarkistaa erikseen neljän suoran laudalla, sisältää
     pysty-, vaaka- ja digaonaaliset suunnat. Mikäli neljän neljän suora on saavutettu
     palautetaan arvo 'True'
     """
