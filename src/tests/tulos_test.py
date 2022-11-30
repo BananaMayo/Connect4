@@ -12,8 +12,18 @@ pelilauta = np.zeros((RIVIT, SARAKKEET+1))
 print(np.flip(pelilauta, 0))
 
 class TestTulos(unittest.TestCase):
+    def setUp(self) -> None:
+        return super().setUp()
+
+
     def test_tulos(self):
-        pelilauta = np.zeros((RIVIT, SARAKKEET))
+        lauta = np.zeros((RIVIT, SARAKKEET))
+        kiekko = 1
+        a = Tulos.tulos_(lauta, kiekko)
+        self.assertEqual(a, 0)
+    
+"""     def test_tulos_2(self):
+        pelilauta = [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 1, 0, 0, 0],[0, 0, 0, 1, 0, 0, 0],[2, 0, 2, 1, 0, 2, 0]]
         kiekko = 1
         a = Tulos.tulos_(pelilauta, kiekko)
-        self.assertEqual(a, 0)
+        self.assertEqual(a, 0) """

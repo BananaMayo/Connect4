@@ -1,5 +1,5 @@
 import unittest
-#from pelipohja import Pelilauta
+#from pelipohja import pe
 
 class TestPelipohja(unittest.TestCase):
     def setUp(self) -> None:
