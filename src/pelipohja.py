@@ -155,6 +155,3 @@ class Pelaa:
 
             if PELI_OHI is True:
                 pygame.time.wait(4000)
-
-if __name__ == "__main__":
-    Pelaa.start()

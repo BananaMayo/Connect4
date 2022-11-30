@@ -13,7 +13,7 @@ print(np.flip(pelilauta, 0))
 
 class TestTulos(unittest.TestCase):
     def test_tulos(self):
-        pelilauta = np.zeros((RIVIT, SARAKKEET+1))
+        pelilauta = np.zeros((RIVIT, SARAKKEET))
         kiekko = 1
         a = Tulos.tulos_(pelilauta, kiekko)
         self.assertEqual(a, 0)
