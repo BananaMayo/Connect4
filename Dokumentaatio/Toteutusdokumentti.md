@@ -10,21 +10,24 @@ Connect 4 on peli jossa on 6 riviä ja 7 saraketta, joka tekee yhteensä 42 kiek
 
 Pelin tilavaativuuden keskiarvo on noin 4.5⋅10^12 (=4,500,000,000,000) erilaista sijotusta, ja pelipuun vaativuus n. 10^21 (=1,000,000,000,000,000,000,000). Pelin tilavaativuudessa on yhteensä 42 kerrosta (plies). Seuraavassa on lista tilavaativuudesta jossa näkyy miten sijoitusten määrä kasvaa kerrosten kasvaessa.
 
-| Kerrokset | Lehten solmut | Sijotusten määrä ('State-Space Complexity') |
+| Kerrokset | Lehtien solmut | Sijotusten määrä ('State-Space Complexity') |
 |---|----|---|
-| 0 | AI | 
-|1 | 7 | AI | 
-|2 | 49 | AI | 
-|3 |  238 | AI | 
-|4 | 1 120 | AI | 
-|5 | 4 263 | AI | 
-|6 | 16 422 | AI | 
-|7 | 53 955 | AI | 
-|8 | 181 597 | AI | 
-|9 | 534 085  | AI |
-|10| 1602 480 | AI |
-|11|  | AI |
-|12 | | |
+| 0 | 1 | 1 |
+| 1 | 7 | 8 | 
+| 2 | 49 | 57 | 
+| 3 |  238 | 295 | 
+| 4 | 1 120 | 1 415 | 
+| 5 | 4 263 | 5 678 | 
+| 6 | 16 422 | 22 100 | 
+| 7 | 53 955 | 76 055 | 
+| 8 | 181 597 | 257 652 | 
+| 9 | 534 085 | 791 737 |
+| 10 | 1 602 480 | 2 394 217 |
+| 11 | 4 231 877 | 6 626 094 |
+| 12 | 11 477 673 | 18 102 767 |
+| : | : | : |
+| 42 | ? | 4,531,985,219,092 (~4,5⋅10^12) |
+
 
 *keskeneräinen*
 
@@ -53,3 +56,4 @@ Mitattu aika: kuinka nopeasti minimax-algoritmi (alpha-beta karsinnalla) sijotta
 ### Lähteet
 * https://app.diagrams.net/
 * https://www.gamesver.com/is-connect-4-a-solved-game-what-does-that-even-mean/
+* https://markusthill.github.io/programming/connect-4-introduction-and-tree-search-algorithms/
