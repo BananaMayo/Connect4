@@ -78,20 +78,19 @@ fontti = pygame.font.SysFont("Helvetica", 48)
 #pelivuorot = random.randint(PELAAJA, AI)
 
 
-
-"""Tämä osio kattaa pelin tapahtumat silloin kun
-peli on käynnissä, ts. kun peliä ei ole vielä voitettu
-jomman kumman osapuolen toimesta
-"""
 class Pelaa:
+    """Tämä luokka kattaa pelin tapahtumat silloin kun
+    peli on käynnissä, ts. kun peliä ei ole vielä voitettu
+    jomman kumman osapuolen toimesta
+    """
     def start():
         #alku = time.time()
         PELI_OHI = False
         vuoro = random.randint(PELAAJA, AI)
         while not PELI_OHI:
+
             #alustetaan pelin sulkeminen 'system-exitillä', eli kun pelin aikana pelaaja
             #painaa punaista exit-painiketta peli sammuu
-
             for event in pygame.event.get():
                 #pylint: disable=no-member
                 if event.type == pygame.QUIT:
@@ -130,6 +129,7 @@ class Pelaa:
                 pygame.display.update()
 
             if vuoro == AI and not PELI_OHI:
+                # Tässä määritetään vastustaja (AI) jossa käytetään Minimax-algoritmia
                 # SYVYYS = 5, vaikeustasoa voi muokata vaihtamalla syvyyttä, mitä syvemmälle algoritmi etsii
                 # sitä vaikeammaksi tekoäly muuttuu
                 sarake, MiniMax_pisteytys = MiniMax.minimax(P_lauta, 5, -math.inf, math.inf, True)
