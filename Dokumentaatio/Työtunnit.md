@@ -37,3 +37,11 @@
 | 25.11 | 0,5h | Testausdokumentin kirjoittelua |
 | 26.11 | 2h | Testejä, ajan mittailua, Githubiin kirjoittelua |
 | yhteensä | 13h | |
+
+## Viikko5
+| Pvm | aika | tehdyt asiat |
+| --- | --- | --- |
+| 30.11 | 2,5h | Dokumentointia, main.py luonti |
+|  |  |  |
+|  |  |  |
+| yhteensä | 2,5h | |
