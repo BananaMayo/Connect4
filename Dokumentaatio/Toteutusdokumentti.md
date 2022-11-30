@@ -1,6 +1,6 @@
 ### Ohjelman yleisrakenne
 Tässä kuva ohjelman yleisrakenteesta:
-![image](https://user-images.githubusercontent.com/101586122/204043786-ad1dfa48-cf0f-4355-93f1-dc0a47a92f06.png)
+![image](https://user-images.githubusercontent.com/101586122/204743829-0cd8353d-3070-44f2-9911-d0522be750c2.png)
 
 ### Saavutetut aika- ja tilavaativuudet (m.m. O-analyysit pseudokoodista) 
 *keskeneräinen*
