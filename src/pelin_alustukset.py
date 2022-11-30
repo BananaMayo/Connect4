@@ -49,6 +49,7 @@ class PelinAlustukset:
 
     def kiekon_sijotus(pelilauta, rivi, sarake, kiekko):
         pelilauta[rivi][sarake] = kiekko
+        return pelilauta[rivi][sarake]
 
     def kiekon_sijainnin_tarkistus(pelilauta, sarake):
         return pelilauta[RIVIT-1][sarake] == 0
