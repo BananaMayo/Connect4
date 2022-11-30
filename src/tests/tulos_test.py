@@ -8,13 +8,11 @@ SARAKKEET = 7
 NELION_KOKO = 100
 SADE = int(NELION_KOKO/2 - 5)
 IKKUNA = 4
-pelilauta = np.zeros((RIVIT, SARAKKEET+1))
-print(np.flip(pelilauta, 0))
+
 
 class TestTulos(unittest.TestCase):
     def setUp(self) -> None:
-        return super().setUp()
-
+        self.pelilauta = np.zeros((RIVIT, SARAKKEET+1))
 
     def test_tulos(self):
         lauta = np.zeros((RIVIT, SARAKKEET))
