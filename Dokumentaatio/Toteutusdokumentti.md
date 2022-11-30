@@ -1,8 +1,13 @@
 ### Ohjelman yleisrakenne
 Tässä kuva ohjelman yleisrakenteesta:
 ![image](https://user-images.githubusercontent.com/101586122/204743829-0cd8353d-3070-44f2-9911-d0522be750c2.png)
+ 
 
-### Saavutetut aika- ja tilavaativuudet (m.m. O-analyysit pseudokoodista) 
+Connect 4 on peli jossa on 6 riviä ja 7 saraketta, joka tekee yhteensä 42 kiekkoa (21 per pelaaja) ja n. 4 531 985 219 092 erilaista sijotusta. Seuraavassa on kuva joka näyttää esimerkin miltä pelipuu voisi näyttää. Solmuja on seitsemän (0-6) sen takia, että sarakkeita on 7 joka tarkoittaa että pelin alkuvaiheissa on mahdollista sijoittaa 7 eri sarakkeelle. Pelin loppuvaiheessa tilanne voi näyttää erilaiselta, esimerkiksi vain.on siis havainnollistettu miltä polku pelin lopetustilaan voisi näyttää.
+
+![image](https://user-images.githubusercontent.com/101586122/204755578-27d0e0dc-dc1d-4b6c-9eee-aa76753460cc.png) [Lähde:https://towardsdatascience.com]
+
+
 *keskeneräinen*
 
 Mitattu aika: kuinka nopeasti minimax-algoritmi (alpha-beta karsinnalla) sijottaa kiekon pelilaudalle
@@ -27,10 +32,6 @@ Mitattu aika: kuinka nopeasti minimax-algoritmi (alpha-beta karsinnalla) sijotta
 | | 17 | AI | 0.002623 ms |  | | | |
 | |  |  | *Pelaaja voitti* |   | | | |
 
- 
-### Suorituskyky- ja O-analyysivertailu (mikäli työ vertailupainotteinen)
-    - tulossa...
-### Työn mahdolliset puutteet ja parannusehdotukset
-    - tulossa...
 ### Lähteet
 * https://app.diagrams.net/
+* https://www.gamesver.com/is-connect-4-a-solved-game-what-does-that-even-mean/
