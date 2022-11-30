@@ -4,11 +4,11 @@ Tässä kuva ohjelman yleisrakenteesta:
  
 
 ### Aika- ja tilavaativuuksista
-Connect 4 on peli jossa on 6 riviä ja 7 saraketta, joka tekee yhteensä 42 kiekkoa (21 per pelaaja) ja 4 531 985 219 092 erilaista sijotusta. Seuraavassa on kuva joka näyttää esimerkin miltä pelipuu voisi näyttää. Jokaisen kerroksen lehdissä on seitsemän solmua (0-6), sen takia että sarakkeita on 7 joka tarkoittaa että pelin alkuvaiheissa on mahdollista sijoittaa 7 eri sarakkeelle. Pelin loppuvaiheessa tilanne voi näyttää erilaiselta, esimerkiksi vain kaksi saraketta on enää käytössä. Alla olevassa kuvassa on siis havainnollistettu miltä polku pelin lopetustilaan voisi näyttää.
+Connect 4 on peli jossa on 6 riviä ja 7 saraketta, joka tekee yhteensä 42 kiekkoa (21 per pelaaja) ja 4 531 985 219 092 erilaista sijotusta. Seuraavassa on kuva joka näyttää esimerkin miltä pelipuu voisi näyttää. Jokaisen kerroksen lehdissä on seitsemän solmua (0-6), sen takia että sarakkeita on 7 joka tarkoittaa että pelin alkuvaiheissa on mahdollista sijoittaa 7 eri sarakkeelle. Pelin loppuvaiheessa tilanne voi näyttää erilaiselta, esimerkiksi vain kaksi saraketta on enää käytössä. Alla olevassa kuvassa on siis havainnollistettu miltä polku pelin lopetustilaan voisi näyttää (kuvassa keltainen kiekko voittaa).
 
 ![image](https://user-images.githubusercontent.com/101586122/204755578-27d0e0dc-dc1d-4b6c-9eee-aa76753460cc.png) [Lähde:https://towardsdatascience.com]
 
-Pelin tilavaativuuden keskiarvo on noin 4.5⋅10^12 (=4,500,000,000,000) erilaista sijotusta, ja pelipuun vaativuus n. 10^21 (=1,000,000,000,000,000,000,000). Pelin tilavaativuudessa on yhteensä 42 kerrosta (plies). Seuraavassa on lista tilavaativuudesta jossa näkyy miten sijoitusten määrä kasvaa kerrosten kasvaessa.
+Pelin tilavaativuuden keskiarvo on noin 4.5⋅10^12 (=4,500,000,000,000) erilaista sijotusta, ja pelipuun vaativuus on n. 10^21 (=1,000,000,000,000,000,000,000). Pelin tilavaativuudessa on yhteensä 42 kerrosta (plies). Seuraavassa on lista tilavaativuudesta jossa näkyy miten sijoitusten määrä kasvaa kerrosten kasvaessa.
 
 | Kerrokset | Lehtien solmut | Sijotusten määrä ('State-Space Complexity') |
 |---|----|---|
@@ -28,6 +28,7 @@ Pelin tilavaativuuden keskiarvo on noin 4.5⋅10^12 (=4,500,000,000,000) erilais
 | : | : | : |
 | 42 | ? | 4,531,985,219,092 (~4,5⋅10^12) |
 
+[Lähde: https://markusthill.github.io/programming/connect-4-introduction-and-tree-search-algorithms/]
 
 *keskeneräinen*
 
@@ -52,6 +53,16 @@ Mitattu aika: kuinka nopeasti minimax-algoritmi (alpha-beta karsinnalla) sijotta
 | | 16 | AI | 0.002146 ms |  | | | |
 | | 17 | AI | 0.002623 ms |  | | | |
 | |  |  | *Pelaaja voitti* |   | | | |
+
+
+
+### Mahdollisia parannuksia
+#### Pelinäkymä
+- Yksi hyvä parannus jonka voisi kehittää pelinäkymään on voittajan saavuttama neljän suoran merkitseminen tai ns. 'valaitseminen'. Sen avulla olisi nopemapi huomata minkälaisen ja missä kohdassa neljän suora on muodostunut.
+#### Käyttöliittymä
+- Toinen hyvä parannus joka liittyy käyttöliittymään olisi luoda pelaajalle mahdollisuus pelata nuolinäppäimillä, eli kiekko liikkuisi nuolinäppäimillä
+yläsarakkeella ja kun pelaaja haluaa pudottaa kiekon painaa hän 'Enter'-painiketta.
+
 
 ### Lähteet
 * https://app.diagrams.net/
