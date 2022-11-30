@@ -1,6 +1,6 @@
 # Connect4
 ![CI](https://github.com/BananaMayo/Connect4/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/BananaMayo/Connect4/branch/master/graph/badge.svg)](https://codecov.io/gh/BananaMayo/Connect4)
+[![codecov](https://codecov.io/gh/BananaMayo/Connect4/branch/master/graph/badge.svg)](https://app.codecov.io/gh/BananaMayo/Connect4?search=&trend=30%20days)
 
 Kurssi: TKT20010 Tiralabra syksy 2022, Helsingin Yliopisto
 
