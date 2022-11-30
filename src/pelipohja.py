@@ -141,7 +141,7 @@ class Pelaa:
                     #print(sarake, MiniMax_pisteytys)
                     loppu_max = time.time()
                     aika = (loppu_max-alku_max)
-                    print("aikaa kului",aika,"s")
+                    print("AI:n kiekon sijottamisessa kului",aika,"s")
 
                     #Jos tekoäly tekee ratkaisevan sijoituksen lopetetaan peli
                     if lrs.RatkaisevaSijotus.ratkaiseva_sijotus(P_lauta, AI_KIEKKO):
