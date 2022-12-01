@@ -3,9 +3,9 @@
 ### Yksikkötestauksen kattavuusraportti. (Unittest)
 Linkki Codecovin testikattavuuksiin löytyy [täältä](https://app.codecov.io/gh/BananaMayo/Connect4)
 
-![image](https://user-images.githubusercontent.com/101586122/204102686-8a069522-9e67-452b-b7de-c1d9b67968ef.png)
+![image](https://user-images.githubusercontent.com/101586122/205009966-b04d8bc1-b684-4ad0-90fd-fc272f74fa7d.png)
 
-![image](https://user-images.githubusercontent.com/101586122/204102710-cfe4f34f-acf3-4e4f-becf-110ad4f06dfc.png)
+![image](https://user-images.githubusercontent.com/101586122/205009705-0899ee8e-b33e-4020-a1a9-a78dd154a7a5.png)
 
 ### Mitä on testattu, miten tämä tehtiin?
 
@@ -37,7 +37,38 @@ että se antaa oikean arvon mikäli tekoäly (AI) voittaa tai sitten häviää.
  
 
 ### Minkälaisilla syötteillä testaus tehtiin (vertailupainotteisissa töissä tärkeää)?
-    - tulossa...
+- Testauksessa on suurimmaksi osaksi käytetty syötteenä kiekkoa, joka on numero (1=Pelaajan, 2=Tekoälyn), sekä pelilautaa joka muodostuu listasta jonka 
+sisällä on rivien verran listoja joiden sisällä sarakkeiden verran numeroita.
+
+Numpy versio näyttää tältä:
+
+[[0. 0. 0. 0. 0. 0. 0.]
+
+ [0. 0. 0. 0. 0. 0. 0.]
+ 
+ [0. 0. 0. 0. 0. 0. 0.]
+ 
+ [0. 0. 0. 0. 0. 0. 0.]
+ 
+ [0. 0. 0. 0. 0. 0. 0.]
+ 
+ [0. 0. 0. 0. 0. 0. 0.]]
+ 
+ Testauksessa lauta näyttää tältä:
+ 
+ [[0, 0, 0, 0, 0, 0, 0,],
+ 
+ [0, 0, 0, 0, 0, 0, 0,],
+ 
+ [0, 0, 0, 0, 0, 0, 0,],
+ 
+ [0, 0, 0, 0, 0, 0, 0,],
+ 
+ [0, 0, 0, 0, 0, 0, 0,],
+ 
+ [0, 0, 0, 0, 0, 0, 0,]]
+ 
+ Erona siis pisteet ja pilkut.
 
 ### Ohjelman toiminnan empiirisen testauksen tulosten esittäminen graafisessa muodossa.
     - tulossa...
