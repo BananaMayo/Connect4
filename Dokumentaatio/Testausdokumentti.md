@@ -34,9 +34,13 @@ että se antaa oikean arvon mikäli tekoäly (AI) voittaa tai sitten häviää.
   - Tämä luokka analysoi siirtoja pelilaudalla ja havaitsee mikäli pelaaja tai tekoäly on sijoittanut niin sanotun "ratkaisevan sijotuksen", ts. kiekko on sijotettu niin että peilaudalle muodostuu neljän suora, saman värisistä kiekoista. Kun niin on tapahtunut, palautaa luokka arvon **True**.
   - Luokkaa on testattu ja sen testitiedosto löytyy [täältä](https://github.com/BananaMayo/Connect4/blob/main/src/tests/ratkaiseva_sijotus_test.py)
   - Testissä testataan manuaalisesti tehdyllä pelilaudalla että erilaiset neljän suorat tuottavat **True**-arvon.
+
+* <ins> **src/pelipohja.py** </ins>
+  - Tätä luokkaa en ole tähän mennessä onnistunut testamaan niin että se menisi CI-pipelinessä läpi pushattuani testin Githubiin. Tämä johtuu siitä
+ että tiedostossa on käytetty 'pygame.init()' (ilman tätä, luokka Pelaa ei toimi) joka testattaessa käynnistää jostain syystä Pygamen. En tiedä onko CI-pipelineen edes mahdollista asentaa riippuvuus jonka avulla se pystyisi testamaan Pygamen. Taidan sen takia laittaa 'pelipohja.py'-tiedoston .coveragerc tiedostoon niin että se ei laske sitä mukaan testaukseen, sillä se laskee testikattavuutta sen verran paljon.
  
 
-### Minkälaisilla syötteillä testaus tehtiin (vertailupainotteisissa töissä tärkeää)?
+### Minkälaisilla syötteillä testaus tehtiin?
 - Testauksessa on suurimmaksi osaksi käytetty syötteenä kiekkoa, joka on numero (1=Pelaajan, 2=Tekoälyn), sekä pelilautaa joka muodostuu listasta jonka 
 sisällä on rivien verran listoja joiden sisällä sarakkeiden verran numeroita.
 
