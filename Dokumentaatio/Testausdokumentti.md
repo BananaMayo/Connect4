@@ -3,9 +3,9 @@
 ### Yksikkötestauksen kattavuusraportti. (Unittest)
 Linkki Codecovin testikattavuuksiin löytyy [täältä](https://app.codecov.io/gh/BananaMayo/Connect4)
 
-![image](https://user-images.githubusercontent.com/101586122/205009966-b04d8bc1-b684-4ad0-90fd-fc272f74fa7d.png)
+![image](https://user-images.githubusercontent.com/101586122/205256364-c59bdcb4-f825-4343-b0a5-007f4a04ebd3.png)
 
-![image](https://user-images.githubusercontent.com/101586122/205009705-0899ee8e-b33e-4020-a1a9-a78dd154a7a5.png)
+![image](https://user-images.githubusercontent.com/101586122/205256476-b8eb0a92-fdd8-4459-a710-b3c3655ae4f9.png)
 
 ### Mitä on testattu, miten tämä tehtiin?
 
