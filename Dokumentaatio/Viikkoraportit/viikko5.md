@@ -20,6 +20,7 @@ Opin että pelissä on yhteensä n. 4,5 biljoonaa erilaista sijotusta kun kaikki
 ### Mikä jäi epäselväksi tai tuottanut vaikeuksia?
 
 Pelipohja.py:n testaaminen. En voi testata ilman että pygame käynnistyy joten taidan jättää sen testikattavuuden ulkopuolelle.
+- **Kysymys**: Miten tämä tulisi suorittaa 'Ohjelman toiminnan empiirisen testauksen tulosten esittäminen graafisessa muodossa'? 
 
 ### Mitä teen seuraavaksi?
 
