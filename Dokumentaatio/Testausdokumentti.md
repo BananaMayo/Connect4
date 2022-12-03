@@ -3,9 +3,9 @@
 ### Yksikkötestauksen kattavuusraportti. (Unittest)
 Linkki Codecovin testikattavuuksiin löytyy [täältä](https://app.codecov.io/gh/BananaMayo/Connect4)
 
-![image](https://user-images.githubusercontent.com/101586122/205009966-b04d8bc1-b684-4ad0-90fd-fc272f74fa7d.png)
+![image](https://user-images.githubusercontent.com/101586122/205256364-c59bdcb4-f825-4343-b0a5-007f4a04ebd3.png)
 
-![image](https://user-images.githubusercontent.com/101586122/205009705-0899ee8e-b33e-4020-a1a9-a78dd154a7a5.png)
+![image](https://user-images.githubusercontent.com/101586122/205256476-b8eb0a92-fdd8-4459-a710-b3c3655ae4f9.png)
 
 ### Mitä on testattu, miten tämä tehtiin?
 
@@ -39,6 +39,31 @@ että se antaa oikean arvon mikäli tekoäly (AI) voittaa tai sitten häviää.
   - Tätä luokkaa en ole tähän mennessä onnistunut testamaan niin että se menisi CI-pipelinessä läpi pushattuani testin Githubiin. Tämä johtuu siitä
  että tiedostossa on käytetty 'pygame.init()' (ilman tätä, luokka Pelaa ei toimi) joka testattaessa käynnistää jostain syystä Pygamen. En tiedä onko CI-pipelineen edes mahdollista asentaa riippuvuus jonka avulla se pystyisi testamaan Pygamen. Taidan sen takia laittaa 'pelipohja.py'-tiedoston .coveragerc tiedostoon niin että se ei laske sitä mukaan testaukseen, sillä se laskee testikattavuutta sen verran paljon.
  
+
+#### Manuaalinen testaus
+##### Tässä stestattu kauanko tekoälyllä kestää asettaa kiekko pelilaudalle, ts. kuinka nopea MiniMax-algoritmi on:
+| **TESTI 1**|Monesko kiekko | AI (Minimax) | Aika| **TESTI 2**|Monesko kiekko | AI (Minimax) | Aika |
+|---|----|-----|-------------|--- |----|-----|-------------|
+| | 1 | AI | 0.002861 ms|    | 1 | AI | 0.004053 ms|
+| | 2 | AI |  0.002623 ms |  | 2 | AI | 0.002384 ms |
+| | 3 | AI | 0.003099 ms |   | 3 | AI | 0.003099 ms |
+| | 4 | AI | 0.003099 ms |   | 4 | AI |  0.004292 ms |
+| | 5 | AI | 0.003099 ms |   | 5 | AI | 0.003576 ms |
+| | 6 | AI | 0.003099 ms |   | 6 | AI | 0.003815 ms |
+| | 7 | AI | 0.003099 ms |   | 7 | AI |  0.002861 ms |
+| | 8 | AI | 0.003338 ms |   | 8 | AI | 0.002623 ms |
+| | 9 | AI | 0.003099 ms |   | 9 | AI | 0.003576 ms |
+| | 10 | AI | 0.003099 ms |  | 10 | AI | 0.003576 ms |
+| | 11 | AI | 0.003576 ms |  | 11 | AI | 0.00453 ms |
+| | 12 | AI | 0.003338 ms |  | 12 | AI | 0.004053 ms |
+| | 13 | AI | 0.002623 ms |  | | | *Pelaaja voitti* |
+| | 14 | AI | 0.002861 ms |  | | | |
+| | 15 | AI | 0.003338 ms |  | | | |
+| | 16 | AI | 0.002146 ms |  | | | |
+| | 17 | AI | 0.002623 ms |  | | | |
+| |  |  | *Pelaaja voitti* |   | | | |
+
+
 
 ### Minkälaisilla syötteillä testaus tehtiin?
 - Testauksessa on suurimmaksi osaksi käytetty syötteenä kiekkoa, joka on numero (1=Pelaajan, 2=Tekoälyn), sekä pelilautaa joka muodostuu listasta jonka 
