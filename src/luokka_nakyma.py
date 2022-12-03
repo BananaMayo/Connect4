@@ -14,7 +14,7 @@ class Nakyma:
         vastustajan_kiekko = PELAAJAN_KIEKKO
         if kiekko == PELAAJAN_KIEKKO:
             vastustajan_kiekko == AI_KIEKKO
-            print(kiekko)
+            tulos += 0.0
         if näkymä.count(kiekko) == 4:
             tulos += 100
         elif näkymä.count(kiekko) == 3 and näkymä.count(TYHJA) == 1:
