@@ -74,6 +74,7 @@ class KiekonSijoitus:
                 kiekko_lista.append(sarake)
         return kiekko_lista
 
+#Päätesolmun määrittely, tarkoittaa viimeistä solmua. Peli päättyy päätesolmuun, tai kun syvyys on 0
 def paate_solmu(pelilauta):
     return voitto_siirto.ratkaiseva_sijotus(pelilauta, PELAAJAN_KIEKKO) or voitto_siirto.ratkaiseva_sijotus(pelilauta, AI_KIEKKO) or len(KiekonSijoitus.kiekon_sijoittaminen(pelilauta)) == 0
 
