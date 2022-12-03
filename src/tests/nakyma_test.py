@@ -47,3 +47,8 @@ class TestNakyma(unittest.TestCase):
         kiekko = 1
         d = Nakyma.nakyma_(näkymä,kiekko)
         self.assertEqual(d, 2)
+    
+    def test_kiekko(self):
+        näkymä = []
+        e = Nakyma.nakyma_(näkymä, PELAAJAN_KIEKKO)
+        self.assertEqual(e, 0.0)

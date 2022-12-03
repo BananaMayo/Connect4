@@ -54,16 +54,15 @@ class TestMinimax (unittest.TestCase):
     ## Keskeneräinen
     def test_palautettavat_arvot(self):
         maximizingPlayer = True
-        syvyys = 5
-        pelilauta = [[2, 2, 2, 2, 1, 0, 0,],
-                     [1, 1, 2, 1, 0, 0, 0,],
-                     [0, 0, 1, 0, 0, 0, 0,],
-                     [0, 0, 0, 0, 0, 0, 0,],
-                     [0, 0, 0, 0, 0, 0, 0,],
-                     [0, 0, 0, 0, 0, 0, 0,]]
-        d = self.minimax.minimax(pelilauta, syvyys, -math.inf, math.inf, True)
+        pelilauta = [[0, 0, 0, 0, 0, 0, 0,], 
+                     [0, 2, 1, 2, 1, 0, 0,], 
+                     [2, 1, 1, 2, 2, 1, 2,], 
+                     [1, 2, 2, 1, 1, 2, 1,],
+                     [1, 1, 1, 2, 2, 2, 1,],
+                     [1, 2, 2, 1, 2, 1, 2,]]
+        d = self.minimax.minimax(pelilauta, 2, -math.inf, math.inf, maximizingPlayer)
 
-        self.assertAlmostEqual(d[1], 10000000000000000)
+        self.assertAlmostEqual(d[1], 0)
 
 """     def test_true_arvo(self):
         pelilauta= [[0, 0, 0, 0, 0, 0, 0,],
