@@ -42,6 +42,6 @@
 | Pvm | aika | tehdyt asiat |
 | --- | --- | --- |
 | 30.11 | 2,5h | Dokumentointia, main.py luonti |
-|  |  |  |
-|  |  |  |
-| yhteensä | 2,5h | |
+| 1.12 | 1,5h | Minimax testailua, dokumentointia |
+| 2.12 | 1,5h | Dokumentointia |
+| yhteensä | 4,5h | |
