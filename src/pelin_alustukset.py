@@ -98,7 +98,7 @@ class MiniMax:
                     return (None, 0)
             else:
                 return (None, tulos.tulos_(pelilauta, AI_KIEKKO))
-
+        
         #MaximizingPlayer osio
         if maximizingPlayer:
             satun_sarake = random.choice(sallittu_sijotus)
