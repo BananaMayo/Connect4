@@ -54,9 +54,9 @@ class TestMinimax (unittest.TestCase):
     ## Keskeneräinen
     def test_palautettavat_arvot(self):
         maximizingPlayer = True
-        pelilauta = [[0, 0, 0, 0, 0, 0, 0,], 
-                     [0, 2, 1, 2, 1, 0, 0,], 
-                     [2, 1, 1, 2, 2, 1, 2,], 
+        pelilauta = [[0, 0, 0, 0, 0, 0, 0,],
+                     [0, 2, 1, 2, 1, 0, 0,],
+                     [2, 1, 1, 2, 2, 1, 2,],
                      [1, 2, 2, 1, 1, 2, 1,],
                      [1, 1, 1, 2, 2, 2, 1,],
                      [1, 2, 2, 1, 2, 1, 2,]]
@@ -64,14 +64,11 @@ class TestMinimax (unittest.TestCase):
 
         self.assertAlmostEqual(d[1], 0)
 
-"""     def test_true_arvo(self):
-        pelilauta= [[0, 0, 0, 0, 0, 0, 0,],
-                    [0, 0, 0, 0, 0, 0, 0,],
-                    [0, 0, 0, 0, 0, 0, 0,],
-                    [0, 0, 0, 0, 0, 0, 0,],
-                    [0, 0, 0, 2, 0, 0, 0,],
-                    [0, 0, 1, 1, 2, 0, 0,]]
-        mini = MiniMax.minimax(pelilauta, 5, -math.inf, math.inf, maximizingPlayer=True)
-        self.assertAlmostEqual(mini, True) """
+
+    ## Koitan testata Maximizing- ja Minimizingplayer osioita, vielä vähän vaikeuksia sen kanssa
+    def test_true_arvo(self):
+        pelilauta= list([[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 1, 0, 0, 0],[0, 0, 0, 1, 0, 0, 0]])
+        mini = MiniMax.minimax(list(pelilauta), 5, -math.inf, math.inf, maximizingPlayer=True)
+        self.assertAlmostEqual(mini, 3)
 
 
