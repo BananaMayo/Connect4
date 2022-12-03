@@ -44,4 +44,5 @@
 | 30.11 | 2,5h | Dokumentointia, main.py luonti |
 | 1.12 | 1,5h | Minimax testailua, dokumentointia |
 | 2.12 | 1,5h | Dokumentointia |
-| yhteensä | 4,5h | |
+| 3.12 | 1,5h | Testailua yms. |
+| yhteensä | 7h | |
