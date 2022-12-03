@@ -24,4 +24,4 @@ Pelipohja.py:n testaaminen. En voi testata ilman että pygame käynnistyy joten 
 
 ### Mitä teen seuraavaksi?
 
--- tulossa
+Seuraavaksi koitan saada Minimax-algoritmin 100% kattavuuden testeissä
