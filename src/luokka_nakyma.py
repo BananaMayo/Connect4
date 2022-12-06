@@ -8,6 +8,7 @@ class Nakyma:
     jos pelaajalla on kaksi peräkkäistä kiekkoa, niin kolmannen kiekon
     sijotus samaan suoraan lisää +5 pistettä tulokseen
     """
+    #pylint: disable=no-self-argument
     #pylint: disable=no-member
     def nakyma_(näkymä, kiekko):
         tulos = 0

@@ -3,35 +3,20 @@ import math
 import numpy as np
 import luokka_ratkaiseva_sijotus as lrs
 import luokka_tulos as lt
-### Globaalit ###
 
-# Värit
-MUSTA = (0,0,0)
-PUNAINEN = (178,34,34)
-SININEN = (30,144,255)
-MIDNIGHT_B = (25,25,112)
-KELTAINEN = (255,215,0)
-OLIIVI = (128,128,0)
-PUU = (222,184,135)
-VAALEA_KELT = (255,255,224)
-RUSKEA = (139,69,19)
-PUU_2 = (255,222,173)
+## Globaalit ##
 
 # Pelin rakenne (rivit ja sarakkeet)
 RIVIT = 6
 SARAKKEET = 7
-NELION_KOKO = 100
-SADE = int(NELION_KOKO/2 - 5)
-IKKUNA = 4
-
 # Pelaaja ja tekoäly
 PELAAJA = 0
 AI = 1
-
 # Pelaajan kiekko, tekoälyn kiekko
+TYHJA = 0
 PELAAJAN_KIEKKO = 1
 AI_KIEKKO = 2
-TYHJA = 0
+
 
 #Pelilaudan alustuksia
 #pylint: disable=no-self-argument
@@ -98,7 +83,7 @@ class MiniMax:
                     return (None, 0)
             else:
                 return (None, tulos.tulos_(pelilauta, AI_KIEKKO))
-        
+
         #MaximizingPlayer osio
         if maximizingPlayer:
             satun_sarake = random.choice(sallittu_sijotus)

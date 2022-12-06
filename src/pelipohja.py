@@ -36,6 +36,8 @@ AI = 1
 PELAAJAN_KIEKKO = 1
 AI_KIEKKO = 2
 TYHJA = 0
+
+#pylint: disable=no-self-argument
 #pylint: disable=invalid-name
 class Pelilauta:
     def pelilauta_(pelilauta):
@@ -62,7 +64,7 @@ class Pelilauta:
 # PYGAME alustukset
 P_lauta = PelinAlustukset.luo_pelilauta()
 PelinAlustukset.pelilaudan_tulostus(P_lauta)
-
+#pylint: disable=no-member
 pygame.init()
 
 LEVEYS = (SARAKKEET * NELION_KOKO)
@@ -75,7 +77,7 @@ Pelilauta.pelilauta_(P_lauta)
 pygame.display.update()
 
 fontti = pygame.font.SysFont("Helvetica", 48)
-#pelivuorot = random.randint(PELAAJA, AI)
+pelivuorot = random.randint(PELAAJA, AI)
 
 
 class Pelaa:
@@ -127,7 +129,7 @@ class Pelaa:
                             PelinAlustukset.pelilaudan_tulostus(P_lauta)
                             Pelilauta.pelilauta_(P_lauta)
                 pygame.display.update()
-
+            #pylint: disable=unused-variable
             if vuoro == AI and not PELI_OHI:
                 # Tässä määritetään vastustaja (AI) jossa käytetään Minimax-algoritmia
                 # SYVYYS = 5, vaikeustasoa voi muokata vaihtamalla syvyyttä, mitä syvemmälle algoritmi etsii
@@ -138,7 +140,6 @@ class Pelaa:
                     rivi = PelinAlustukset.seuraava_avoin_rivi(P_lauta, sarake)
                     #Pudotetaan tekoälyn kiekko
                     PelinAlustukset.kiekon_sijotus(P_lauta, rivi, sarake, AI_KIEKKO)
-                    #print(sarake, MiniMax_pisteytys)
                     loppu_max = time.time()
                     aika = (loppu_max-alku_max)
                     print("AI:n kiekon sijottamisessa kului",aika,"s")
