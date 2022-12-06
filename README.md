@@ -1,6 +1,6 @@
 # Connect4
 ![CI](https://github.com/BananaMayo/Connect4/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/BananaMayo/Connect4/branch/master/graph/badge.svg)](https://app.codecov.io/gh/BananaMayo/Connect4?search=&trend=30%20days)
+[![codecov](https://codecov.io/gh/BananaMayo/Connect4/branch/main/graph/badge.svg?token=69W5G19QKL)](https://codecov.io/gh/BananaMayo/Connect4)
 
 Kurssi: TKT20010 Tiralabra syksy 2022, Helsingin Yliopisto
 
@@ -19,3 +19,30 @@ Ohjelmointikieli tulee olemaan Python
 - [Viikko2](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Viikkoraportit/viikko2.md)
 - [Viikko3](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Viikkoraportit/viikko3.md)
 - [Viikko4](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Viikkoraportit/viikko4.md)
+- [Viikko5](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Viikkoraportit/viikko5.md)
+
+## Käyttöohje
+* Lataa koodi omalle koneelle komennolla: 
+``` 
+$ git clone <linkki>
+```
+* Siirry projektin juurihakemistoon ja suorita komento:
+```
+$ poetry install
+```
+* Siirry virtuaaliympäristöön komennolla:
+```
+$ poetry shell
+```
+* Käynnistä peli komennolla:
+```
+$ python3 src/main.py
+```
+* suorita testit komennolla:
+```
+$ pytest src/ 
+```
+* tai laaduntarkistus testi komennolla:
+```
+$ pylint src/
+```
