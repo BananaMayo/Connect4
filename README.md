@@ -30,17 +30,19 @@ $ git clone <linkki>
 ```
 $ poetry install
 ```
+* Siirry virtuaaliympäristöön komennolla:
+```
+$ poetry shell
+```
 * Käynnistä peli komennolla:
 ```
 $ python3 src/main.py
 ```
-* Suorita testit ensin komennolla:
-```
-$ poetry shell
-```
-* jonka jälkeen:
+* suorita testit komennolla:
 ```
 $ pytest src/ 
-tai laaduntarkistus testi
+```
+* tai laaduntarkistus testi komennolla:
+```
 $ pylint src/
 ```
