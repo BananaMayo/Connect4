@@ -20,3 +20,27 @@ Ohjelmointikieli tulee olemaan Python
 - [Viikko3](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Viikkoraportit/viikko3.md)
 - [Viikko4](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Viikkoraportit/viikko4.md)
 - [Viikko5](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Viikkoraportit/viikko5.md)
+
+## Käyttöohje
+* Lataa koodi omalle koneelle komennolla: 
+``` 
+$ git clone <linkki>
+```
+* Siirry projektin juurihakemistoon ja suorita komento:
+```
+$ poetry install
+```
+* Käynnistä peli komennolla:
+```
+$ python3 src/main.py
+```
+* Suorita testit ensin komennolla:
+```
+$ poetry shell
+```
+* jonka jälkeen:
+```
+$ pytest src/ 
+tai laaduntarkistus testi
+$ pylint src/
+```
