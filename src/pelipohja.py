@@ -7,6 +7,7 @@ from pelin_alustukset import PelinAlustukset
 from pelin_alustukset import MiniMax
 import luokka_ratkaiseva_sijotus as lrs
 
+
 ### Globaalit ###
 
 # Värit
@@ -37,8 +38,11 @@ PELAAJAN_KIEKKO = 1
 AI_KIEKKO = 2
 TYHJA = 0
 
+
 #pylint: disable=no-self-argument
 #pylint: disable=invalid-name
+#pylint: disable=no-member
+
 class Pelilauta:
     def pelilauta_(pelilauta):
         """Pelilaudan ulkonäkö; laudan värit sekä ympyrät
@@ -61,10 +65,11 @@ class Pelilauta:
                     pygame.draw.circle(naytto, PUNAINEN, (int(sarake*NELION_KOKO+NELION_KOKO/2), KORKEUS-int(rivi*NELION_KOKO+NELION_KOKO/2)), SADE)
         pygame.display.update()
 
+
 # PYGAME alustukset
 P_lauta = PelinAlustukset.luo_pelilauta()
 PelinAlustukset.pelilaudan_tulostus(P_lauta)
-#pylint: disable=no-member
+
 pygame.init()
 
 LEVEYS = (SARAKKEET * NELION_KOKO)
@@ -86,7 +91,6 @@ class Pelaa:
     jomman kumman osapuolen toimesta
     """
     def start():
-        #alku = time.time()
         PELI_OHI = False
         vuoro = random.randint(PELAAJA, AI)
         while not PELI_OHI:
@@ -101,7 +105,6 @@ class Pelaa:
                 #Tämä osio näyttää pelaajan kiekon ylärivillä kun on hänen vuoro
                 if event.type == pygame.MOUSEMOTION:
                     pygame.draw.rect(naytto, PUU_2, (0,0, LEVEYS, NELION_KOKO))
-                    #x = event.pos[0]
                     if vuoro == PELAAJA:
                         #pygame.draw.circle(naytto, OLIIVI, (x, int(NELION_KOKO/2)), SADE)
                         pygame.draw.circle(naytto, MIDNIGHT_B, (LEVEYS//2, NELION_KOKO//2), SADE)

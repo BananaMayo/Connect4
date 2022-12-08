@@ -1,5 +1,6 @@
 from pelipohja import Pelaa
 
+
 def main():
     """Tämä käynnistää pelin!
     Kutsutaan pelipohjasta luokkaa josta saadaan
@@ -7,6 +8,7 @@ def main():
     """
     pelataan = Pelaa
     pelataan.start()
+
 
 if __name__ == "__main__":
     main()
