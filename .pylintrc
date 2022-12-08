@@ -159,6 +159,7 @@ notes=FIXME,
 
 
 [TYPECHECK]
+disable=E1101, E0211, R1705, E1136, R1710, W0104
 
 # List of decorators that produce context managers, such as
 # contextlib.contextmanager. Add to this list to register other decorators that
@@ -492,7 +493,7 @@ max-attributes=8
 max-bool-expr=5
 
 # Maximum number of branch for function / method body.
-max-branches=13
+max-branches=14
 
 # Maximum number of locals for function / method body.
 max-locals=15
