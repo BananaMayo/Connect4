@@ -31,11 +31,7 @@ class TestPelinAlustukset(unittest.TestCase):
     
     def test_seuraava_avoin_rivi(self):
         sarake = 3
-        pelilauta = [[2, 1, 2, 1, 2, 1, 2,],
-                     [2, 1, 2, 1, 2, 1, 2,],
-                     [2, 1, 2, 1, 2, 1, 2,],
-                     [0, 0, 0, 0, 0, 0, 0,],
-                     [0, 0, 0, 0, 0, 0, 0,],
-                     [0, 0, 0, 0, 0, 0, 0,]]
+        rivit = 6
+        pelilauta = np.ones((rivit, SARAKKEET))
         avoin_rivi = self.peli.seuraava_avoin_rivi(pelilauta, sarake)
-        self.assertEqual(avoin_rivi, 3)
+        self.assertEqual(avoin_rivi, None)
