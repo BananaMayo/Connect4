@@ -1,13 +1,17 @@
+#pylint: disable=no-self-argument
+#pylint: disable=inconsistent-return-statements
+#pylint: disable=unsubscriptable-object
+#pylint: disable=pointless-string-statement
+
 RIVIT = 6
 SARAKKEET = 7
 NELION_KOKO = 100
 IKKUNA = 4
 SADE = int(NELION_KOKO/2 - 5)
 ARVO = True
-#pylint: disable=no-self-argument
+
+
 class RatkaisevaSijotus:
-    #pylint: disable=unsubscriptable-object
-    #pylint: disable=pointless-string-statement
     """Luokan funktio tarkistaa erikseen neljän suoran laudalla, sisältää
     pysty-, vaaka- ja digaonaaliset suunnat. Mikäli neljän neljän suora on saavutettu
     palautetaan arvo 'True'

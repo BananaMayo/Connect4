@@ -4,6 +4,7 @@ import numpy as np
 import luokka_ratkaiseva_sijotus as lrs
 import luokka_tulos as lt
 
+
 ## Globaalit ##
 
 # Pelin rakenne (rivit ja sarakkeet)
@@ -47,6 +48,7 @@ class PelinAlustukset:
     def pelilaudan_tulostus(pelilauta):
         print(np.flip(pelilauta, 0))
 
+
 class KiekonSijoitus:
     #pylint: disable=dangerous-default-value
     """Luokka luo tyhjän listan johon laitetaan sellainen sarake mihin on
@@ -59,12 +61,15 @@ class KiekonSijoitus:
                 kiekko_lista.append(sarake)
         return kiekko_lista
 
+
 #Päätesolmun määrittely, tarkoittaa viimeistä solmua. Peli päättyy päätesolmuun, tai kun syvyys on 0
 def paate_solmu(pelilauta):
     return voitto_siirto.ratkaiseva_sijotus(pelilauta, PELAAJAN_KIEKKO) or voitto_siirto.ratkaiseva_sijotus(pelilauta, AI_KIEKKO) or len(KiekonSijoitus.kiekon_sijoittaminen(pelilauta)) == 0
 
+
 voitto_siirto = lrs.RatkaisevaSijotus
 tulos = lt.Tulos
+
 
 class MiniMax:
     """Minimax-algoritmi AI-tekoälyä varten. Luokkassa käytetään alpha-beta karsintaa

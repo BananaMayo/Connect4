@@ -1,10 +1,13 @@
 from luokka_nakyma import Nakyma
 
+
 RIVIT = 6
 SARAKKEET = 7
 IKKUNA = 4
 NELION_KOKO = 100
 SADE = int(NELION_KOKO/2 - 5)
+
+
 #pylint: disable=no-self-argument
 class Tulos:
     #pylint: disable=unsubscriptable-object
