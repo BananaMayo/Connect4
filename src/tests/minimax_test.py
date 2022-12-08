@@ -1,4 +1,5 @@
 import unittest
+import numpy as np
 import math
 import random
 from typing import List
@@ -28,18 +29,6 @@ class TestMinimax (unittest.TestCase):
         self.assertEqual(a[1], ai_pisteet)
 
 
-    def test_paate_solmun_toimivuus(self):
-        pelilauta = [[0, 0, 0, 0, 0, 0, 0,],
-                     [0, 0, 0, 1, 0, 0, 0,],
-                     [0, 0, 0, 1, 0, 0, 0,],
-                     [0, 0, 0, 2, 0, 0, 0,],
-                     [0, 0, 0, 1, 0, 0, 0,],
-                     [1, 2, 2, 2, 2, 0, 0,]]
-        self.minimax(pelilauta, 1, -math.inf, math.inf, True)
-        b = paate_solmu(pelilauta)
-        self.assertEqual(b, True)
-    
-
     def test_ai_havio(self):
         syvyys = 5
         pelilauta = [[0, 0, 0, 0, 0, 0, 0,],
@@ -65,6 +54,21 @@ class TestMinimax (unittest.TestCase):
         ai_pisteet = 0
         self.assertEqual(c[1], ai_pisteet)
 
+class TestMaxMini(unittest.TestCase):
+    def setUp(self) -> None:
+        self.minimax = minimax
+
+    def test_paate_solmun_toimivuus(self):
+        pelilauta = [[0, 0, 0, 0, 0, 0, 0,],
+                     [0, 0, 0, 1, 0, 0, 0,],
+                     [0, 0, 0, 1, 0, 0, 0,],
+                     [0, 0, 0, 2, 0, 0, 0,],
+                     [0, 0, 0, 1, 0, 0, 0,],
+                     [1, 2, 2, 2, 2, 0, 0,]]
+        self.minimax(pelilauta, 1, -math.inf, math.inf, True)
+        b = paate_solmu(pelilauta)
+        self.assertEqual(b, True)
+
 
     def test_palautettavat_arvot(self):
         maximizingPlayer = True
@@ -89,48 +93,15 @@ class TestMinimax (unittest.TestCase):
         sijotus =  KiekonSijoitus.kiekon_sijoittaminen(pelilauta)
         self.assertEqual(sijotus, [5,6])
 
+
+class TestMinimaxies (unittest.TestCase):
+    def setUp(self) -> None:
+        self.minimax = minimax
+
     def test_maximi(self):
-        pelilauta = [
-                     [0, 0, 0, 0, 0, 0, 0],
-                     [0, 0, 0, 0, 0, 0, 0],
-                     [0, 0, 0, 0, 0, 1, 0],
-                     [0, 2, 0, 0, 2, 1, 0],
-                     [2, 2, 0, 0, 1, 1, 0],
-                     [1, 2, 1, 0, 2, 1, 0]]
-        e = minimaxi(pelilauta, 5, -math.inf, math.inf, True)
-        self.assertEqual(e, (3,-10000000000000000))
+        pelilauta = np.zeros((RIVIT, SARAKKEET))
+        e = minimax(pelilauta, 5, -10, 10, True)
+        self.assertEqual(e, (3, 10))
 
-def minimaxi(pelilauta, syvyys, alpha, beta, maximizingPlayer):
-    sallittu_sijotus = KiekonSijoitus.kiekon_sijoittaminen(pelilauta)
-    if maximizingPlayer == True:
-        satun_sarake = random.choice(sallittu_sijotus)
-        nykyinen_arvo = -math.inf
-        for sarake in sallittu_sijotus:
-            rivi = PelinAlustukset.seuraava_avoin_rivi(pelilauta, sarake)
-            lauta_kopio = pelilauta.copy()
-            PelinAlustukset.kiekon_sijotus(lauta_kopio, rivi, sarake, AI_KIEKKO)
-            uusi_tulos = minimax(lauta_kopio, syvyys-1, alpha, beta, False)[1]
-            if uusi_tulos > nykyinen_arvo:
-                nykyinen_arvo = uusi_tulos
-                satun_sarake = sarake
-            alpha = max(alpha, nykyinen_arvo)
-            if alpha >= beta:
-                break
-        return satun_sarake, nykyinen_arvo
-    #MinimizingPlayer osio
-    else:
-        nykyinen_arvo = math.inf
-        satun_sarake = random.choice(sallittu_sijotus)
-        for sarake in sallittu_sijotus:
-            rivi = PelinAlustukset.seuraava_avoin_rivi(pelilauta, sarake)
-            lauta_kopio = pelilauta.copy()
-            PelinAlustukset.kiekon_sijotus(lauta_kopio, rivi, sarake, PELAAJAN_KIEKKO)
-            uusi_tulos = minimax(lauta_kopio, syvyys-1, alpha, beta, True)[1]
-            if uusi_tulos < nykyinen_arvo:
-                nykyinen_arvo = uusi_tulos
-                satun_sarake = sarake
-            beta = min(beta, nykyinen_arvo)
-            if alpha >= beta:
-                break
-        return satun_sarake, nykyinen_arvo
-
+    def test_minimi(self):
+        pass

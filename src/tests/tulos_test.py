@@ -12,16 +12,16 @@ IKKUNA = 4
 
 class TestTulos(unittest.TestCase):
     def setUp(self) -> None:
-        self.pelilauta = np.zeros((RIVIT, SARAKKEET+1))
+        self.pelilauta = np.zeros((RIVIT, SARAKKEET))
 
     def test_tulos(self):
         lauta = np.zeros((RIVIT, SARAKKEET))
         kiekko = 1
         a = Tulos.tulos_(lauta, kiekko)
         self.assertEqual(a, 0)
-    
-"""     def test_tulos_2(self):
-        pelilauta = [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 1, 0, 0, 0],[0, 0, 0, 1, 0, 0, 0],[2, 0, 2, 1, 0, 2, 0]]
+
+    def test_tulos_2(self):
+        pelilauta = np.ones((RIVIT, SARAKKEET))
         kiekko = 1
         a = Tulos.tulos_(pelilauta, kiekko)
-        self.assertEqual(a, 0) """
+        self.assertEqual(a, 6918.0)
