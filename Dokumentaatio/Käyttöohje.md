@@ -16,6 +16,3 @@ Lyhyempi ohje:
     - Laadun testaus: 'pylint src/' (vaatii virtuaaliympäristö)
     - Lopeteltaessa: komento exit (poistuu virtuaaliympäristöstä)
 ```
-
-Minkä muotoisia syötteitä ohjelma hyväksyy
-Missä hakemistossa on jar ja ajamiseen tarvittavat testitiedostot.
