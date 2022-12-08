@@ -4,7 +4,7 @@ import time
 import sys
 import pygame
 from pelin_alustukset import PelinAlustukset
-from pelin_alustukset import MiniMax
+from pelin_alustukset import minimax
 import luokka_ratkaiseva_sijotus as lrs
 
 
@@ -137,7 +137,7 @@ class Pelaa:
                 # Tässä määritetään vastustaja (AI) jossa käytetään Minimax-algoritmia
                 # SYVYYS = 5, vaikeustasoa voi muokata vaihtamalla syvyyttä, mitä syvemmälle algoritmi etsii
                 # sitä vaikeammaksi tekoäly muuttuu
-                sarake, MiniMax_pisteytys = MiniMax.minimax(P_lauta, 5, -math.inf, math.inf, True)
+                sarake, MiniMax_pisteytys = minimax(P_lauta, 5, -math.inf, math.inf, True)
                 alku_max = time.time()
                 if PelinAlustukset.kiekon_sijainnin_tarkistus(P_lauta, sarake):
                     rivi = PelinAlustukset.seuraava_avoin_rivi(P_lauta, sarake)

@@ -71,53 +71,52 @@ voitto_siirto = lrs.RatkaisevaSijotus
 tulos = lt.Tulos
 
 
-class MiniMax:
-    """Minimax-algoritmi AI-tekoälyä varten. Luokkassa käytetään alpha-beta karsintaa
-    jonka takia funktiossa on määriteltynä 'alpha' ja 'beta'.
-    """
-    def minimax(pelilauta, syvyys, alpha, beta, maximizingPlayer):
-        sallittu_sijotus = KiekonSijoitus.kiekon_sijoittaminen(pelilauta)
-        on_paate_solmu = paate_solmu(pelilauta)
-        if syvyys == 0 or on_paate_solmu:
-            if on_paate_solmu:
-                if voitto_siirto.ratkaiseva_sijotus(pelilauta, AI_KIEKKO):
-                    return (None, 10000000000000000)
-                elif voitto_siirto.ratkaiseva_sijotus(pelilauta, PELAAJAN_KIEKKO):
-                    return (None, -10000000000000000)
-                else:
-                    return (None, 0)
+"""Minimax-algoritmi AI-tekoälyä varten. Luokkassa käytetään alpha-beta karsintaa
+jonka takia funktiossa on määriteltynä 'alpha' ja 'beta'.
+"""
+def minimax(pelilauta, syvyys, alpha, beta, maximizingPlayer):
+    sallittu_sijotus = KiekonSijoitus.kiekon_sijoittaminen(pelilauta)
+    on_paate_solmu = paate_solmu(pelilauta)
+    if syvyys == 0 or on_paate_solmu:
+        if on_paate_solmu:
+            if voitto_siirto.ratkaiseva_sijotus(pelilauta, AI_KIEKKO):
+                return (None, 10000000000000000)
+            elif voitto_siirto.ratkaiseva_sijotus(pelilauta, PELAAJAN_KIEKKO):
+                return (None, -10000000000000000)
             else:
-                return (None, tulos.tulos_(pelilauta, AI_KIEKKO))
-
-        #MaximizingPlayer osio
-        if maximizingPlayer:
-            satun_sarake = random.choice(sallittu_sijotus)
-            nykyinen_arvo = -math.inf
-            for sarake in sallittu_sijotus:
-                rivi = PelinAlustukset.seuraava_avoin_rivi(pelilauta, sarake)
-                lauta_kopio = pelilauta.copy()
-                PelinAlustukset.kiekon_sijotus(lauta_kopio, rivi, sarake, AI_KIEKKO)
-                uusi_tulos = MiniMax.minimax(lauta_kopio, syvyys-1, alpha, beta, False)[1]
-                if uusi_tulos > nykyinen_arvo:
-                    nykyinen_arvo = uusi_tulos
-                    satun_sarake = sarake
-                alpha = max(alpha, nykyinen_arvo)
-                if alpha >= beta:
-                    break
-            return satun_sarake, nykyinen_arvo
-        #MinimizingPlayer osio
+                return (None, 0)
         else:
-            nykyinen_arvo = math.inf
-            satun_sarake = random.choice(sallittu_sijotus)
-            for sarake in sallittu_sijotus:
-                rivi = PelinAlustukset.seuraava_avoin_rivi(pelilauta, sarake)
-                lauta_kopio = pelilauta.copy()
-                PelinAlustukset.kiekon_sijotus(lauta_kopio, rivi, sarake, PELAAJAN_KIEKKO)
-                uusi_tulos = MiniMax.minimax(lauta_kopio, syvyys-1, alpha, beta, True)[1]
-                if uusi_tulos < nykyinen_arvo:
-                    nykyinen_arvo = uusi_tulos
-                    satun_sarake = sarake
-                beta = min(beta, nykyinen_arvo)
-                if alpha >= beta:
-                    break
-            return satun_sarake, nykyinen_arvo
+            return (None, tulos.tulos_(pelilauta, AI_KIEKKO))
+
+    #MaximizingPlayer osio
+    if maximizingPlayer:
+        satun_sarake = random.choice(sallittu_sijotus)
+        nykyinen_arvo = -math.inf
+        for sarake in sallittu_sijotus:
+            rivi = PelinAlustukset.seuraava_avoin_rivi(pelilauta, sarake)
+            lauta_kopio = pelilauta.copy()
+            PelinAlustukset.kiekon_sijotus(lauta_kopio, rivi, sarake, AI_KIEKKO)
+            uusi_tulos = minimax(lauta_kopio, syvyys-1, alpha, beta, False)[1]
+            if uusi_tulos > nykyinen_arvo:
+                nykyinen_arvo = uusi_tulos
+                satun_sarake = sarake
+            alpha = max(alpha, nykyinen_arvo)
+            if alpha >= beta:
+                break
+        return satun_sarake, nykyinen_arvo
+    #MinimizingPlayer osio
+    else:
+        nykyinen_arvo = math.inf
+        satun_sarake = random.choice(sallittu_sijotus)
+        for sarake in sallittu_sijotus:
+            rivi = PelinAlustukset.seuraava_avoin_rivi(pelilauta, sarake)
+            lauta_kopio = pelilauta.copy()
+            PelinAlustukset.kiekon_sijotus(lauta_kopio, rivi, sarake, PELAAJAN_KIEKKO)
+            uusi_tulos = minimax(lauta_kopio, syvyys-1, alpha, beta, True)[1]
+            if uusi_tulos < nykyinen_arvo:
+                nykyinen_arvo = uusi_tulos
+                satun_sarake = sarake
+            beta = min(beta, nykyinen_arvo)
+            if alpha >= beta:
+                break
+        return satun_sarake, nykyinen_arvo
