@@ -13,6 +13,7 @@ Ohjelmointikieli tulee olemaan Python
 ### [Testausdokumentti](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Testausdokumentti.md#testausdokumentti)
 ### [Toteutusdokumentti](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Toteutusdokumentti.md)
 ### [Työtunnit](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Ty%C3%B6tunnit.md)
+### [Käyttöohje](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/K%C3%A4ytt%C3%B6ohje.md#k%C3%A4ytt%C3%B6ohje)
 
 ### [Viikkoraportit](https://github.com/BananaMayo/Connect4/tree/main/Dokumentaatio/Viikkoraportit)
 - [Viikko1](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Viikkoraportit/viikko1.md)
