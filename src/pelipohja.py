@@ -99,12 +99,14 @@ class Pelaa:
             #painaa punaista exit-painiketta peli sammuu
             for event in pygame.event.get():
                 #pylint: disable=no-member
+
                 if event.type == pygame.QUIT:
                     sys.exit()
 
                 #Tämä osio näyttää pelaajan kiekon ylärivillä kun on hänen vuoro
                 if event.type == pygame.MOUSEMOTION:
                     pygame.draw.rect(naytto, PUU_2, (0,0, LEVEYS, NELION_KOKO))
+
                     if vuoro == PELAAJA:
                         #pygame.draw.circle(naytto, OLIIVI, (x, int(NELION_KOKO/2)), SADE)
                         pygame.draw.circle(naytto, MIDNIGHT_B, (LEVEYS//2, NELION_KOKO//2), SADE)
@@ -115,9 +117,11 @@ class Pelaa:
                 #sarakkeeseen johon on 'klikattu', mikäli se on sallittu sarake (ei täynnä)
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     pygame.draw.rect(naytto, PUU_2, (0,0, LEVEYS, NELION_KOKO))
+
                     if vuoro == PELAAJA:
                         x = event.pos[0]
                         sarake = int(math.floor(x/NELION_KOKO))
+
                         if PelinAlustukset.kiekon_sijainnin_tarkistus(P_lauta, sarake):
                             rivi = PelinAlustukset.seuraava_avoin_rivi(P_lauta, sarake)
                             PelinAlustukset.kiekon_sijotus(P_lauta, rivi, sarake, PELAAJAN_KIEKKO)
@@ -132,6 +136,7 @@ class Pelaa:
                             PelinAlustukset.pelilaudan_tulostus(P_lauta)
                             Pelilauta.pelilauta_(P_lauta)
                 pygame.display.update()
+
             #pylint: disable=unused-variable
             if vuoro == AI and not PELI_OHI:
                 # Tässä määritetään vastustaja (AI) jossa käytetään Minimax-algoritmia
@@ -139,6 +144,7 @@ class Pelaa:
                 # sitä vaikeammaksi tekoäly muuttuu
                 sarake, MiniMax_pisteytys = minimax(P_lauta, 5, -math.inf, math.inf, True)
                 alku_max = time.time()
+
                 if PelinAlustukset.kiekon_sijainnin_tarkistus(P_lauta, sarake):
                     rivi = PelinAlustukset.seuraava_avoin_rivi(P_lauta, sarake)
                     #Pudotetaan tekoälyn kiekko
@@ -152,6 +158,7 @@ class Pelaa:
                         tekstia_2 = fontti.render("Harmi, uudestaan vaan...", 1, PUNAINEN)
                         naytto.blit(tekstia_2, (78,15))
                         PELI_OHI = True
+
                     PelinAlustukset.pelilaudan_tulostus(P_lauta)
                     Pelilauta.pelilauta_(P_lauta)
                     vuoro +=1

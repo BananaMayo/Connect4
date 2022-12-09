@@ -71,7 +71,7 @@ voitto_siirto = lrs.RatkaisevaSijotus
 tulos = lt.Tulos
 
 
-"""Minimax-algoritmi AI-tekoälyä varten. Luokkassa käytetään alpha-beta karsintaa
+"""Minimax-algoritmi AI-tekoälyä varten. Funktiossa käytetään alpha-beta karsintaa
 jonka takia funktiossa on määriteltynä 'alpha' ja 'beta'.
 """
 def minimax(pelilauta, syvyys, alpha, beta, maximizingPlayer):
@@ -104,6 +104,7 @@ def minimax(pelilauta, syvyys, alpha, beta, maximizingPlayer):
             if alpha >= beta:
                 break
         return satun_sarake, nykyinen_arvo
+
     #MinimizingPlayer osio
     else:
         nykyinen_arvo = math.inf

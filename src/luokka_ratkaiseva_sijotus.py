@@ -13,7 +13,7 @@ ARVO = True
 
 class RatkaisevaSijotus:
     """Luokan funktio tarkistaa erikseen neljän suoran laudalla, sisältää
-    pysty-, vaaka- ja digaonaaliset suunnat. Mikäli neljän neljän suora on saavutettu
+    pysty-, vaaka- ja digaonaaliset suunnat. Mikäli neljän suora on saavutettu
     palautetaan arvo 'True'
     """
     def ratkaiseva_sijotus(pelilauta, kiekko):
