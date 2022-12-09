@@ -11,7 +11,7 @@ Lyhyempi ohje:
     - Siirtyminen ladattuun kansioon
     - Suorita 'poetry install'
     - Virtuaaliympäristö: 'poetry shell'
-    - Suorita 'python3 src/main.py'  (käynnistää pelin, ei vaadi virtuaaliympäristöä)
+    - Suorita 'python3 src/main.py'  (käynnistää pelin, vaatii virtuaaliympäristön)
     - Testaus: 'pytest' tai 'pytest src/' (vaatii virtuaaliympärstön)
     - Laadun testaus: 'pylint src/' (vaatii virtuaaliympäristö)
     - Lopeteltaessa: komento exit (poistuu virtuaaliympäristöstä)
