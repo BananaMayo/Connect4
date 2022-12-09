@@ -1,4 +1,4 @@
-Kuudennen viikon tunnit: [Tehdyt tunnit](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Ty%C3%B6tunnit.md#viikko5)
+Kuudennen viikon tunnit: [Tehdyt tunnit](https://github.com/BananaMayo/Connect4/blob/main/Dokumentaatio/Ty%C3%B6tunnit.md#viikko6)
 
 ### Mitä olen tehnyt tällä viikolla?
 
