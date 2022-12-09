@@ -46,3 +46,13 @@
 | 2.12 | 1,5h | Dokumentointia |
 | 3.12 | 1,5h | Testailua yms. |
 | yhteensä | 7h | |
+
+## Viikko6
+| Pvm | aika | tehdyt asiat |
+| --- | --- | --- |
+| 5.12 | 1,5h | Käyttöohjeen luonti, erillisenä tiedostona ja Readme.md versio |
+| 5.12 | 0,5h | Readme.md codecov badgen prosentit näkyviin |
+| 6.12 | 1,5h | Käyttöohjeen viimeistely ja Unittestailua |
+| 8.12 | 3h | Enemmän testailua, testikattavuuden parannusta |
+| 9.12 | 1,5h | Dokumentointia, viikkoraportti yms. |
+| yhteensä | 8h | |

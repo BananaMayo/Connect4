@@ -1,6 +1,6 @@
 ### Ohjelman yleisrakenne
 Tässä kuva ohjelman yleisrakenteesta:
-![image](https://user-images.githubusercontent.com/101586122/204743829-0cd8353d-3070-44f2-9911-d0522be750c2.png)
+![image](https://user-images.githubusercontent.com/101586122/206666355-02a0e92a-a7db-4e49-8c82-215186bd4833.png)
  
 
 ### Aika- ja tilavaativuuksista
@@ -59,6 +59,7 @@ Mitattu aika: kuinka nopeasti minimax-algoritmi (alpha-beta karsinnalla) sijotta
 ### Mahdollisia parannuksia
 #### Pelinäkymä
 - Yksi hyvä parannus jonka voisi kehittää pelinäkymään on voittajan saavuttama neljän suoran merkitseminen tai ns. 'valaitseminen'. Sen avulla olisi nopemapi huomata minkälaisen ja missä kohdassa neljän suora on muodostunut.
+- Toinen hyvä parannus olisi luoda uudelleenkäynnistys-painike joka tulisi esille aina pelin päätyttyä. Silloin voisi päättää haluaako lopettaa vai pelata uudelleen.
 #### Käyttöliittymä
 - Toinen hyvä parannus joka liittyy käyttöliittymään olisi luoda pelaajalle mahdollisuus pelata nuolinäppäimillä, eli kiekko liikkuisi nuolinäppäimillä
 yläsarakkeella ja kun pelaaja haluaa pudottaa kiekon painaa hän 'Enter'-painiketta.

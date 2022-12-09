@@ -3,9 +3,10 @@
 ### Yksikkötestauksen kattavuusraportti. (Unittest)
 Linkki Codecovin testikattavuuksiin löytyy [täältä](https://app.codecov.io/gh/BananaMayo/Connect4)
 
-![image](https://user-images.githubusercontent.com/101586122/205256364-c59bdcb4-f825-4343-b0a5-007f4a04ebd3.png)
+![image](https://user-images.githubusercontent.com/101586122/206667543-ab4098ed-72fa-41bc-ab7e-9fb2155d6fc0.png)
 
-![image](https://user-images.githubusercontent.com/101586122/205256476-b8eb0a92-fdd8-4459-a710-b3c3655ae4f9.png)
+![image](https://user-images.githubusercontent.com/101586122/206667391-fea5efee-bfbe-4cc7-bb54-5d6c3124f3b1.png)
+
 
 ### Mitä on testattu, miten tämä tehtiin?
 
@@ -28,6 +29,12 @@ että se antaa oikean arvon mikäli tekoäly (AI) voittaa tai sitten häviää.
   - Tämän tiedoston testikattavuus löytyy [täältä](https://app.codecov.io/gh/BananaMayo/Connect4/blob/main/src/pelin_alustukset.py)
   - Luokkaa PelinAlustukset on tarkistettu siltä osin että kiekon sijoitus onnistuu ja että seuraava avoin rivi antaa oikean avoimen rivin.
   - Luokan testitiedosto löytyy [täältä](https://github.com/BananaMayo/Connect4/blob/main/src/tests/pelin_alustukset_test.py)
+
+* <ins> **src/luokka_tulos.py** </ins>
+  - Tämän luokan testikattavuus löytyy [täältä](https://app.codecov.io/gh/BananaMayo/Connect4/blob/main/src/luokka_tulos.py)
+  - Tätä luokkaa on testattu numpyn luodulla pelilaudalla ja tarkistettu että tyhjällä pelilaudalla tulostuu tulokseksi 0 ja 
+pelilaudalla jossa on kiekkoja tulostuu jokin tietty tulos.
+  - Luokan testitiedosto löytyy [täältä](https://github.com/BananaMayo/Connect4/blob/main/src/tests/tulos_test.py)
 
 * <ins> **src/luokka_ratkaiseva_sijotus.py** </ins>
   - Tämän luokan testikattavuus löytyy [täältä](https://app.codecov.io/gh/BananaMayo/Connect4/blob/main/src/luokka_ratkaiseva_sijotus.py)
@@ -98,6 +105,3 @@ Numpy versio näyttää tältä:
  [0, 0, 0, 0, 0, 0, 0,]]
  
  Erona siis pisteet ja pilkut.
-
-### Ohjelman toiminnan empiirisen testauksen tulosten esittäminen graafisessa muodossa.
-    - tulossa...
