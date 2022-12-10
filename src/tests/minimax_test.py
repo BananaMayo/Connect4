@@ -103,5 +103,38 @@ class TestMinimaxies (unittest.TestCase):
         e = minimax(pelilauta, 5, -10, 10, True)
         self.assertEqual(e, (3, 10))
 
-    def test_minimi(self):
-        pass
+    def test_sijotus_pisteet_1(self):
+        pelilauta = np.zeros((RIVIT, SARAKKEET))
+        pelilauta[0][3] = 2
+        oletettu = (3, 14) #(sarake, pisteet)
+        syvyys = 3
+        pelaaja = 1
+        tulos = minimax(pelilauta, syvyys, -math.inf, math.inf, pelaaja)
+        self.assertEqual(tulos, oletettu)
+
+    def test_sijotus_pisteet_2(self):
+        pelilauta = np.zeros((RIVIT, SARAKKEET))
+        pelilauta[0][3] = 1
+        pelilauta[1][3] = 2
+        pelilauta[2][3] = 2
+        pelilauta[0][2] = 1
+        print(np.flip(pelilauta, 0))
+        oletettu = (2, 20) #(sarake, pisteet)
+        syvyys = 3
+        pelaaja = 1
+        tulos = minimax(pelilauta, syvyys, -math.inf, math.inf, pelaaja)
+        self.assertEqual(tulos, oletettu)
+
+    def test_sijotus_pisteet_3(self):
+        pelilauta = np.zeros((RIVIT, SARAKKEET))
+        pelilauta[0][2] = 1
+        pelilauta[0][3] = 2
+        pelilauta[1][3] = 2
+        pelilauta[1][2] = 1
+        pelilauta[2][2] = 1
+        print(np.flip(pelilauta, 0))
+        oletettu = (2, 15) #(sarake, pisteet)
+        syvyys = 3
+        pelaaja = 1
+        tulos = minimax(pelilauta, syvyys, -math.inf, math.inf, pelaaja)
+        self.assertEqual(tulos, oletettu)
