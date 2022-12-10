@@ -55,4 +55,5 @@
 | 6.12 | 1,5h | Käyttöohjeen viimeistely ja Unittestailua |
 | 8.12 | 3h | Enemmän testailua, testikattavuuden parannusta |
 | 9.12 | 1,5h | Dokumentointia, viikkoraportti yms. |
-| yhteensä | 8h | |
+| 10.12 | 1h | Enemmän Minimax testailua |
+| yhteensä | 9h | |
