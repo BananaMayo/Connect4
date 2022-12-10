@@ -8,6 +8,7 @@ Kuudennen viikon tunnit: [Tehdyt tunnit](https://github.com/BananaMayo/Connect4/
 -  Siistinyt koodia
 -  Korjanut koodia siltä osin että pylint toimisi CI-pipelinessä
 -  Saanut testit niin että kattavuus näyttää hyvälle
+-  Tehnyt enemmän Minimax testailua
 
 ### Miten ohjelma on edistynyt?
 
