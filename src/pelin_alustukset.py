@@ -83,9 +83,9 @@ def minimax(pelilauta, syvyys, alpha, beta, maximizingPlayer):
                 return (None, 10000000000000000)
             elif voitto_siirto.ratkaiseva_sijotus(pelilauta, PELAAJAN_KIEKKO):
                 return (None, -10000000000000000)
-            else:
+            else: #tasuri
                 return (None, 0)
-        else:
+        else: #syvyys 0
             return (None, tulos.tulos_(pelilauta, AI_KIEKKO))
 
     #MaximizingPlayer osio
