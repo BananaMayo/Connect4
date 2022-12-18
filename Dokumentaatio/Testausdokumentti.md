@@ -18,12 +18,12 @@ asetetaan kiekko niin, että syntyy kaksi saman väristä kiekkoa peräkkäin, n
 pistettä tulokseen, kolme peräkkäistä +5 etc.
   - Luokassa testattiin pistetyksien toimivuus, eli oikea määrä kiekkoja peräkkäin lisää oikean määrän pisteitä tulokseen. Tämä saatiin testattua suhteellisen hyvin.
 
-* <ins> **src/pelin_alustukset (MiniMax)** </ins>
+* <ins> **src/pelin_alustukset (minima)** </ins>
   - Tämän tiedoston testikattavuus löytyy [täältä](https://app.codecov.io/gh/BananaMayo/Connect4/blob/main/src/pelin_alustukset.py)
   - Tiedosto sisältää Minimax-algoritmin, pelin alustukseen kuuluvat osat ja kiekon sijoittamiseen liittyvän luokan.
-  - Luokkaa MiniMax on testattu ja sen testitiedosto löytyy [täältä](https://github.com/BananaMayo/Connect4/blob/main/src/tests/minimax_test.py)
-  - MiniMax luokassa on funktio joka on minimax-algoritmi, siinä on käytetty alpha-beta karsintaa. Algoritmin ensimmäistä osaa on testattu, ja tarkistettu
-että se antaa oikean arvon mikäli tekoäly (AI) voittaa tai sitten häviää.
+  - Funktiota minimax on testattu ja sen testitiedosto löytyy [täältä](https://github.com/BananaMayo/Connect4/blob/main/src/tests/minimax_test.py)
+  - minimax-funktio on minimax-algoritmi jossa on käytetty alpha-beta karsintaa. Algoritmia on testattu, ja tarkistettu
+että se antaa oikean arvon mikäli tekoäly (AI) voittaa tai sitten häviää. On myös testattu sijoituksen oletettu sijainti kun pelilauta näyttää tietyltä tavalta, eli mille sarakkeelle tekoäly sijoittaa ja paljonko pisteitä kyseisestä sijoituksesta saa.
 
 * <ins> **src/pelin_alustukset.py (PelinAlustukset)** </ins>
   - Tämän tiedoston testikattavuus löytyy [täältä](https://app.codecov.io/gh/BananaMayo/Connect4/blob/main/src/pelin_alustukset.py)
