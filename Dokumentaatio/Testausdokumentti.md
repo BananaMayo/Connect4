@@ -18,7 +18,7 @@ asetetaan kiekko niin, että syntyy kaksi saman väristä kiekkoa peräkkäin, n
 pistettä tulokseen, kolme peräkkäistä +5 etc.
   - Luokassa testattiin pistetyksien toimivuus, eli oikea määrä kiekkoja peräkkäin lisää oikean määrän pisteitä tulokseen. Tämä saatiin testattua suhteellisen hyvin.
 
-* <ins> **src/pelin_alustukset (minima)** </ins>
+* <ins> **src/pelin_alustukset (minimax)** </ins>
   - Tämän tiedoston testikattavuus löytyy [täältä](https://app.codecov.io/gh/BananaMayo/Connect4/blob/main/src/pelin_alustukset.py)
   - Tiedosto sisältää Minimax-algoritmin, pelin alustukseen kuuluvat osat ja kiekon sijoittamiseen liittyvän luokan.
   - Funktiota minimax on testattu ja sen testitiedosto löytyy [täältä](https://github.com/BananaMayo/Connect4/blob/main/src/tests/minimax_test.py)
