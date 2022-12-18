@@ -51,8 +51,8 @@ class TestMinimax (unittest.TestCase):
                      [1, 1, 1, 2, 2, 2, 1,],
                      [1, 2, 2, 1, 2, 1, 2,]]
         c = self.minimax(pelilauta, syvyys, -math.inf, math.inf, True)
-        ai_pisteet = 0
-        self.assertEqual(c[1], ai_pisteet)
+        ai_pisteet = (None, 0)
+        self.assertEqual(c, ai_pisteet)
 
 class TestMaxMini(unittest.TestCase):
     def setUp(self) -> None:
