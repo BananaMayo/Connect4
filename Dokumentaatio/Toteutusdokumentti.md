@@ -30,9 +30,8 @@ Pelin tilavaativuuden keskiarvo on noin 4.5⋅10^12 (=4,500,000,000,000) erilais
 
 [Lähde: https://markusthill.github.io/programming/connect-4-introduction-and-tree-search-algorithms/]
 
-*keskeneräinen*
 
-Mitattu aika: kuinka nopeasti minimax-algoritmi (alpha-beta karsinnalla) sijottaa kiekon pelilaudalle
+**Mitattu aika: kuinka nopeasti minimax-algoritmi (alpha-beta karsinnalla) sijottaa kiekon pelilaudalle**
 | **TESTI 1**|Monesko kiekko | AI (Minimax) | Aika| **TESTI 2**|Monesko kiekko | AI (Minimax) | Aika |
 |---|----|-----|-------------|--- |----|-----|-------------|
 | | 1 | AI | 0.002861 ms|    | 1 | AI | 0.004053 ms|
@@ -61,7 +60,7 @@ Mitattu aika: kuinka nopeasti minimax-algoritmi (alpha-beta karsinnalla) sijotta
 - Yksi hyvä parannus jonka voisi kehittää pelinäkymään on voittajan saavuttama neljän suoran merkitseminen tai ns. 'valaitseminen'. Sen avulla olisi nopemapi huomata minkälaisen ja missä kohdassa neljän suora on muodostunut.
 - Toinen hyvä parannus olisi luoda uudelleenkäynnistys-painike joka tulisi esille aina pelin päätyttyä. Silloin voisi päättää haluaako lopettaa vai pelata uudelleen.
 #### Käyttöliittymä
-- Toinen hyvä parannus joka liittyy käyttöliittymään olisi luoda pelaajalle mahdollisuus pelata nuolinäppäimillä, eli kiekko liikkuisi nuolinäppäimillä
+- Kolmas hyvä parannus joka liittyy käyttöliittymään olisi luoda pelaajalle mahdollisuus pelata nuolinäppäimillä, eli kiekko liikkuisi nuolinäppäimillä
 yläsarakkeella ja kun pelaaja haluaa pudottaa kiekon painaa hän 'Enter'-painiketta.
 
 
